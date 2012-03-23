@@ -37,7 +37,7 @@
 		Yii::import('p3pages.modules.*');
 		
 		$rootNode = P3Page::model()->findByAttributes(array('layout'=>'_BootMenu'));
-		$this->widget('ext.yii-bootstrap.widgets.BootNavbar', array(
+		$this->widget('ext.crisu83.yii-bootstrap.widgets.BootNavbar', array(
 			//'fluid' => true,
 			'collapse' => true,
 			'items' => array(
