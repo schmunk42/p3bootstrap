@@ -4,7 +4,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-Yii::app()->theme = "p3bootstrap";
+Yii::app()->theme = (Yii::app()->params['backendTheme'])?Yii::app()->params['backendTheme']:"backend";
 
 $dirname = dirname(__FILE__);
 preg_match("|.*/(.*)/(.*)/(.*\.php)$|", __FILE__, $matches);
