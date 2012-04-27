@@ -21,7 +21,6 @@
 		  <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		<?php Yii::app()->assetManager->publish(Yii::app()->theme->basePath.DIRECTORY_SEPARATOR.'css') ?>
-		<!--<link href="<?php echo Yii::app()->assetManager->publish(Yii::app()->theme->basePath.DIRECTORY_SEPARATOR.'css'.DIRECTORY_SEPARATOR.'blueprint-bootstrap.css') ?>" rel="stylesheet">-->
 		<link href="<?php echo Yii::app()->assetManager->publish(Yii::app()->theme->basePath.DIRECTORY_SEPARATOR.'css'.DIRECTORY_SEPARATOR.'p3.css') ?>" rel="stylesheet">
 
 		<!-- Le fav and touch icons -->
@@ -34,9 +33,9 @@
 	<body>
 
 		<?php
-		
+
 		Yii::import('p3pages.modules.*');
-		
+
 		$rootNode = P3Page::model()->findByAttributes(array('layout'=>'_BootMenu'));
 		$this->widget('ext.crisu83.yii-bootstrap.widgets.BootNavbar', array(
 			//'fluid' => true,
@@ -110,12 +109,12 @@
 
 			<script type="text/javascript">
 				// blueprint to bootstrap hotfix
-				
+
 				// IE buggy with this - maybe not needed
 				//$(':not(.subwrapper:has(.row))').addClass('row');
 				//$('.subwrapper:has(.form:has(.row))').addClass('row');
 				//$(':not(.subwrapper:has([class^=span-]))').removeClass('row');
-				
+
 				//////$('div:first-child[class^=span-]').addClass('first');
 			</script>
 
