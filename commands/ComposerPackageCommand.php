@@ -43,6 +43,9 @@ EOS;
             if (substr($key, 0, 8) === "commands") {
                 unset($fileListBackend[$key]);
             }
+            if (substr($key, 0, 13) === "composer.json") {
+                unset($fileListBackend[$key]);
+            }
         }
 
         $fileListFrontend = $fileListBackend;
