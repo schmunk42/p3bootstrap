@@ -30,32 +30,30 @@ EOS;
      * @param type $args
      */
     public function run($args) {
-        echo "\nCopying p3bootstrap package to theme folder ...\n";
 
-        $themePath = '..' . DIRECTORY_SEPARATOR . 'themes';
+        $themePath = realpath(Yii::getPathOfAlias('application') . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'themes');
+        echo "\nCopying p3bootstrap package to theme folder '{$themePath}'...\n";
 
-        $fileListBackend = $this->buildFileList(dirname(__FILE__) . DIRECTORY_SEPARATOR . '..', $themePath.DIRECTORY_SEPARATOR.'backend');
-        foreach($fileListBackend AS $key => $entry) {
+        $fileListBackend = $this->buildFileList(dirname(__FILE__) . DIRECTORY_SEPARATOR . '..', $themePath . DIRECTORY_SEPARATOR . 'backend');
+        foreach ($fileListBackend AS $key => $entry) {
             // remove .git files and commands, as they're not longer needed
-            if(substr($key,0,4) === ".git") {
+            if (substr($key, 0, 4) === ".git") {
                 unset($fileListBackend[$key]);
             }
-            if(substr($key,0,8) === "commands") {
+            if (substr($key, 0, 8) === "commands") {
                 unset($fileListBackend[$key]);
             }
         }
 
         $fileListFrontend = $fileListBackend;
-        foreach($fileListFrontend AS $key => $entry) {
-            $fileListFrontend[$key]['target'] = str_replace('/backend/','/frontend/',$entry['target']);
+        foreach ($fileListFrontend AS $key => $entry) {
+            $fileListFrontend[$key]['target'] = str_replace('/backend/', '/frontend/', $entry['target']);
         }
 
         echo "\nCopying theme files for 'frontend' theme...\n";
         $this->copyFiles($fileListFrontend);
         echo "\nCopying theme files for 'backend' theme...\n";
         $this->copyFiles($fileListBackend);
-
-
     }
 
 }
