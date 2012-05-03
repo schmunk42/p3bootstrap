@@ -50,7 +50,7 @@ EOS;
 
         $fileListFrontend = $fileListBackend;
         foreach ($fileListFrontend AS $key => $entry) {
-            $fileListFrontend[$key]['target'] = str_replace('/backend/', '/frontend/', $entry['target']);
+            $fileListFrontend[$key]['target'] = str_replace(DIRECTORY_SEPARATOR . 'backend' . DIRECTORY_SEPARATOR, DIRECTORY_SEPARATOR . 'frontend' . DIRECTORY_SEPARATOR, $entry['target']);
         }
 
         echo "\nCopying theme files for 'frontend' theme...\n";
