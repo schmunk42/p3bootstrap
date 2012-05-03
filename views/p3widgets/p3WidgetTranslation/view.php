@@ -6,7 +6,7 @@ Yii::app()->theme = (Yii::app()->params['backendTheme'])?Yii::app()->params['bac
 
 // find original view and include it
 $dirname = dirname(__FILE__);
-preg_match("|.*".DIRECTORY_SEPARATOR."(.*)".DIRECTORY_SEPARATOR."(.*)".DIRECTORY_SEPARATOR."(.*\.php)$|", __FILE__, $matches);
+preg_match("|.*\\".DIRECTORY_SEPARATOR."(.*)\\".DIRECTORY_SEPARATOR."(.*)\\".DIRECTORY_SEPARATOR."(.*\.php)$|", __FILE__, $matches);
 include(Yii::getPathOfAlias($matches[1].'.views.'.$matches[2]).DIRECTORY_SEPARATOR.$matches[3]);
 
 ?>
