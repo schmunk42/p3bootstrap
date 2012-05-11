@@ -75,7 +75,6 @@
 					'htmlOptions' => array('class' => 'pull-right'),
 					'items' => array(
 						array('label' => 'Phundament 3', 'url' => '#', 'visible' => !Yii::app()->user->isGuest, 'items' => array(
-								array('label' => 'Phundament 3-0.3'),
 								array('label' => 'Upload Media', 'url' => array('/p3media/import/upload'), 'visible' => Yii::app()->user->checkAccess('P3media.Import.*')),
 								'---',
 								array('label' => 'Media', 'url' => array('/p3media'), 'visible' => Yii::app()->user->checkAccess('P3media.Import.*')),
