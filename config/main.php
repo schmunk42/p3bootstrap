@@ -35,13 +35,13 @@ return array(
 			'templates_replaceContent' => true,
 			#'ignoreEmptyParagraph' => false,
 			#'forcePasteAsPlainText' => true,
-			'contentsCss' => $_baseDir . '/themes/_bootstrap/ckeditor/ckeditor.css',
+			'contentsCss' => $_baseDir . '/themes/frontend/ckeditor/ckeditor.css',
 			'bodyId' => 'ckeditor',
 			'bodyClass' => 'ckeditor',
 			/* Assets will be published with publishAsset() */
 
-			'templates_files' => array($_baseDir . '/themes/_bootstrap/ckeditor/cktemplates.js'),
-			'stylesCombo_stylesSet' => 'my_styles:' . $_baseDir . '/themes/_bootstrap/ckeditor/ckstyles.js',
+			'templates_files' => array($_baseDir . '/themes/backend/ckeditor/cktemplates.js'),
+			'stylesCombo_stylesSet' => 'my_styles:' . $_baseDir . '/themes/backend/ckeditor/ckstyles.js',
 			/* Standard-way to specify URLs - deprecated */
 			/* 'filebrowserBrowseUrl' => '/p3media/ckeditor',
 			  'filebrowserImageBrowseUrl' => '/p3media/ckeditor/image',
