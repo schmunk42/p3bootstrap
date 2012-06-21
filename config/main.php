@@ -40,8 +40,8 @@ return array(
 			'bodyClass' => 'ckeditor',
 			/* Assets will be published with publishAsset() */
 
-			'templates_files' => array($_baseDir . '/themes/backend/ckeditor/cktemplates.js'),
-			'stylesCombo_stylesSet' => 'my_styles:' . $_baseDir . '/themes/backend/ckeditor/ckstyles.js',
+			'templates_files' => array($_baseDir . '/themes/frontend/ckeditor/cktemplates.js'),
+			'stylesCombo_stylesSet' => 'my_styles:' . $_baseDir . '/themes/frontend/ckeditor/ckstyles.js',
 			/* Standard-way to specify URLs - deprecated */
 			/* 'filebrowserBrowseUrl' => '/p3media/ckeditor',
 			  'filebrowserImageBrowseUrl' => '/p3media/ckeditor/image',
