@@ -1,7 +1,11 @@
-// use bootstrap with blueprint translation
-@import "../../../lessii/translations/blueprint-bootstrap.less"; 
+/* import bootrap */
+@import "../../../protected/extensions/twitter/bootstrap/less/bootstrap.less";
+@import "../../../protected/extensions/twitter/bootstrap/less/responsive.less";
 
-// override variables with local values
+/* use bootstrap with blueprint translation */
+@import "../../../protected/extensions/lessii/translations/blueprint-bootstrap.less";
+
+/* override variables with local values */
 @import "variables.less";
 
 html {
@@ -13,30 +17,52 @@ img.pull-left, img.pull-right {
 }
 
 .container hr {
-  clear: both;
+    clear: both;
 }
 
-/* Module: rights */
-.actions
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* iPhone Hacks */
 @media (max-width: 480px) {
     .je-node INPUT {
-	width: 30%;
+        width: 30%;
     }
     .cke_dialog {
-	zoom: 0.5;
+        zoom: 0.5;
     }
 
     div.form .row LABEL,
     div.form .row INPUT,
     div.form .row SELECT,
     div.form .row TEXTAREA,
-    div.form .row .hint, {
-	text-align: left;
-	margin-left: 0px;
+    div.form .row .hint {
+        text-align: left;
+        margin-left: 0px;
     }
-} 
+}
 
 .ckeditor LI {
     height: 180px;
