@@ -198,15 +198,6 @@ CKEDITOR.addStylesSet( 'my_styles',
         }
     },
 
-    {
-        name : 'tooltip (title)',
-        element : 'a',
-        attributes : {
-            'rel' : 'tooltip'
-        }
-    },
-
-
     // Bootstap inline styles
     {
         name : 'badge success',
@@ -281,12 +272,34 @@ CKEDITOR.addStylesSet( 'my_styles',
     },
 
     {
+        name : 'button',
+        element : 'a',
+        attributes : {
+            'class' : 'btn'
+        }
+    },
+    {
+        name : 'button large',
+        element : 'a',
+        attributes : {
+            'class' : 'btn btn-large'
+        }
+    },
+    {
+        name : 'button small',
+        element : 'a',
+        attributes : {
+            'class' : 'btn btn-small'
+        }
+    },
+
+    /*{
         name : 'tooltip (title)',
         element : 'a',
         attributes : {
             'rel' : 'tooltip'
         }
-    },
+    },*/
 
     {
         name : 'thumbnail',
