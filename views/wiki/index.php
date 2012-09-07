@@ -11,14 +11,14 @@
 	<div class="span10 offset2">
 
 		<?php
-		$this->widget('bootstrap.widgets.BootBreadcrumbs', array(
+		$this->widget('bootstrap.widgets.TbBreadcrumbs', array(
 			'links' => array($this->id => array('/wiki'), $page),
 		));
 		?>
 	</div>
 	<div class="span2">
 		<?php
-		$this->widget('bootstrap.widgets.BootMenu', array(
+		$this->widget('bootstrap.widgets.TbMenu', array(
 			'type' => 'list',
 			'items' => array_merge(array(array('label' => 'WIKI PAGES')), $items)
 		));

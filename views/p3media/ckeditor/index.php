@@ -95,7 +95,7 @@ data: $(this).serialize()
 	<div class="row">
 		<div class="span12">
 			<?php
-			$this->widget('bootstrap.widgets.BootThumbnails', array(
+			$this->widget('bootstrap.widgets.TbThumbnails', array(
 				'dataProvider' => $model->search(),
 				'template' => "{pager}\n{items}",
 				'itemView' => '_thumb',
@@ -117,7 +117,7 @@ data: $(this).serialize()
 			return false;
 		}
 		var identifier = $('#preset').val();
-		if (confirm('Select #'+id+' as \''+identifier+'\'?')) {		
+		if (confirm('Select #'+id+' as \''+identifier+'\'?')) {
 			//alert(id+'-'+preset);
 			var split;
 			split = identifier.split('|')
