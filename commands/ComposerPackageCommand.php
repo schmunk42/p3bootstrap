@@ -31,7 +31,7 @@ EOS;
      */
     public function run($args) {
 
-        $themePath = realpath(Yii::getPathOfAlias('application') . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'themes');
+        $themePath = realpath(Yii::getPathOfAlias('webroot') . DIRECTORY_SEPARATOR . 'themes');
         echo "\nCopying p3bootstrap package to theme folder '{$themePath}'...\n";
 
         $fileListBackend = $this->buildFileList(dirname(__FILE__) . DIRECTORY_SEPARATOR . '..', $themePath . DIRECTORY_SEPARATOR . 'backend');
