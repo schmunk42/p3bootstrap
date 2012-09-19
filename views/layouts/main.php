@@ -34,12 +34,12 @@
         Yii::import('p3pages.modules.*');
 
         $rootNode = P3Page::model()->findByAttributes(array('layout' => '_BootMenu'));
-        $this->widget('ext.crisu83.yii-bootstrap.widgets.TbNavbar', array(
+        $this->widget('TbNavbar', array(
             //'fluid' => true,
             'collapse' => true,
             'items' => array(
                 array(
-                    'class' => 'bootstrap.widgets.TbMenu',
+                    'class' => 'TbMenu',
                     /* 'items' => array(
                       array('label' => 'Home', 'url' => array('/site/index')),
                       array('label' => 'About', 'url' => array('/site/page', 'view' => 'about')),
@@ -51,7 +51,7 @@
                 ),
                 //'<form class="navbar-search pull-left" action=""><input type="text" class="search-query span2" placeholder="Search"></form>',
                 array(
-                    'class' => 'bootstrap.widgets.TbMenu',
+                    'class' => 'TbMenu',
                     'htmlOptions' => array('class' => 'pull-right'),
                     'items' => array(
                         array(
@@ -67,7 +67,7 @@
                     )
                 ),
                 array(
-                    'class' => 'bootstrap.widgets.TbMenu',
+                    'class' => 'TbMenu',
                     'htmlOptions' => array('class' => 'pull-right'),
                     'items' => array(
                         array('label' => 'Phundament 3', 'url' => '#', 'visible' => !Yii::app()->user->isGuest, 'items' => array(
