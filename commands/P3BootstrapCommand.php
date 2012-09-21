@@ -52,7 +52,7 @@ EOS;
         echo "\nCopying p3bootstrap package to theme folders ...\n";
 
         $backendViews = $this->buildFileList(
-            $srcPath . 'views', $themePath . DIRECTORY_SEPARATOR . 'backend/views');
+            $srcPath . 'views/layouts', $themePath . DIRECTORY_SEPARATOR . 'backend/views/layouts');
         $backendCss = $this->buildFileList(
             $srcPath . 'css', $publicThemePath . DIRECTORY_SEPARATOR . 'backend/css');
         $backendLess = $this->buildFileList(
