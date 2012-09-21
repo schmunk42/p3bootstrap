@@ -17,9 +17,11 @@
  * @package p3extensions.commands
  * @since 3.0.5
  */
-class P3BootstrapCommand extends CConsoleCommand {
+class P3BootstrapCommand extends CConsoleCommand
+{
 
-    public function getHelp() {
+    public function getHelp()
+    {
         echo <<<EOS
 n/a
 EOS;
@@ -29,34 +31,41 @@ EOS;
      * Syncs from 'server1' to 'server2' the 'alias'
      * @param type $args
      */
-    public function run($args) {
+    public function run($args)
+    {
+        $srcPath = dirname(__FILE__) . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR;
 
-        $themePath = realpath(Yii::getPathOfAlias('webroot') . DIRECTORY_SEPARATOR . 'themes');
-        echo "\nCopying p3bootstrap package to theme folder '{$themePath}'...\n";
+        $themePath = realpath(Yii::getPathOfAlias('application.themes'));
+        $publicThemePath = realpath(Yii::getPathOfAlias('webroot') . DIRECTORY_SEPARATOR . 'themes');
 
-        $fileListBackend = $this->buildFileList(dirname(__FILE__) . DIRECTORY_SEPARATOR . '..', $themePath . DIRECTORY_SEPARATOR . 'backend');
-        foreach ($fileListBackend AS $key => $entry) {
-            // remove .git files and commands, as they're not longer needed
-            if (substr($key, 0, 4) === ".git") {
-                unset($fileListBackend[$key]);
-            }
-            if (substr($key, 0, 8) === "commands") {
-                unset($fileListBackend[$key]);
-            }
-            if (substr($key, 0, 13) === "composer.json") {
-                unset($fileListBackend[$key]);
-            }
-        }
+        echo "\nCopying p3bootstrap package to theme folders ...\n";
 
-        $fileListFrontend = $fileListBackend;
-        foreach ($fileListFrontend AS $key => $entry) {
-            $fileListFrontend[$key]['target'] = str_replace(DIRECTORY_SEPARATOR . 'backend' . DIRECTORY_SEPARATOR, DIRECTORY_SEPARATOR . 'frontend' . DIRECTORY_SEPARATOR, $entry['target']);
-        }
+        $backendViews = $this->buildFileList(
+            $srcPath . 'views', $themePath . DIRECTORY_SEPARATOR . 'backend/views');
+        $backendCss = $this->buildFileList(
+            $srcPath . 'css', $publicThemePath . DIRECTORY_SEPARATOR . 'backend/css');
+        $backendLess = $this->buildFileList(
+            $srcPath . 'less', $publicThemePath . DIRECTORY_SEPARATOR . 'backend/less');
+
+        $frontendViews = $this->buildFileList(
+            $srcPath . 'views', $themePath . DIRECTORY_SEPARATOR . 'frontend/views');
+        $frontendCss = $this->buildFileList(
+            $srcPath . 'css', $publicThemePath . DIRECTORY_SEPARATOR . 'frontend/css');
+        $frontendLess = $this->buildFileList(
+            $srcPath . 'less', $publicThemePath . DIRECTORY_SEPARATOR . 'frontend/less');
+        $frontendCkeditor = $this->buildFileList(
+            $srcPath . 'ckeditor', $publicThemePath . DIRECTORY_SEPARATOR . 'frontend/ckeditor');
+
+        echo "\nCopying theme files for 'backend' theme...\n";
+        $this->copyFiles($backendViews);
+        $this->copyFiles($backendCss);
+        $this->copyFiles($backendLess);
 
         echo "\nCopying theme files for 'frontend' theme...\n";
-        $this->copyFiles($fileListFrontend);
-        echo "\nCopying theme files for 'backend' theme...\n";
-        $this->copyFiles($fileListBackend);
+        $this->copyFiles($frontendViews);
+        $this->copyFiles($frontendCss);
+        $this->copyFiles($frontendLess);
+        $this->copyFiles($frontendCkeditor);
     }
 
 }
