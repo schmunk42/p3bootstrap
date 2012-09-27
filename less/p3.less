@@ -1,9 +1,17 @@
-/* USAGE IN THEME FOLDER */
+/**
+ * Main less include file
+ *
+ * This file is copied from p3bootstrap. You have to run
+ * php composer.phar install --dev
+ * in order to get the imported files.
+ */
+
 /* import bootrap */
-@import "../../../protected/extensions/twitter/bootstrap/less/bootstrap.less";
-@import "../../../protected/extensions/twitter/bootstrap/less/responsive.less";
-/* use bootstrap with blueprint translation */
-@import "../../../protected/extensions/phundament/lessii/translations/blueprint-bootstrap.less";
+@import "../../../../vendor/extensions/twitter/bootstrap/less/bootstrap.less";
+@import "../../../../vendor/extensions/twitter/bootstrap/less/responsive.less";
+
+/* use bootstrap with blueprint translation (for old extensions) */
+@import "../../../../vendor/extensions/phundament/lessii/translations/blueprint-bootstrap.less";
 
 /* USAGE IN EXTENSION PHUNDAMENT */
 /* import bootrap */
@@ -18,27 +26,6 @@
 html {
     overflow-y: scroll;
 }
-
-img.pull-left, img.pull-right {
-    padding: 4px;
-}
-
-.container hr {
-    clear: both;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
