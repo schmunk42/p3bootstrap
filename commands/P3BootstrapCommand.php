@@ -53,6 +53,8 @@ EOS;
 
         $backendViews = $this->buildFileList(
             $srcPath . 'views/layouts', $themePath . DIRECTORY_SEPARATOR . 'backend/views/layouts');
+        unset($backendViews['_menu.php']);
+
         $backendCss = $this->buildFileList(
             $srcPath . 'css', $publicThemePath . DIRECTORY_SEPARATOR . 'backend/css');
         $backendLess = $this->buildFileList(
