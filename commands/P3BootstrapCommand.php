@@ -19,6 +19,8 @@
  */
 class P3BootstrapCommand extends CConsoleCommand
 {
+    public $themePath = 'application.themes'; // view files
+    public $publicThemePath = 'application.www.themes'; // css, js, ...
 
     public function getHelp()
     {
@@ -35,13 +37,24 @@ EOS;
     {
         $srcPath = dirname(__FILE__) . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR;
 
-        $themePath = realpath(Yii::getPathOfAlias('application.themes'));
-        $publicThemePath = realpath(Yii::getPathOfAlias('webroot') . DIRECTORY_SEPARATOR . 'themes');
+        $themePath = realpath(Yii::getPathOfAlias($this->themePath));
+        $publicThemePath = realpath(Yii::getPathOfAlias($this->publicThemePath));
+
+        if (!is_dir($themePath)) {
+            echo "\nInvalid 'theemPath', aborting.";
+            return;
+        }
+        if (!is_dir($publicThemePath)) {
+            echo "\nInvalid 'publicTheemPath', aborting.";
+            return;
+        }
 
         echo "\nCopying p3bootstrap package to theme folders ...\n";
 
         $backendViews = $this->buildFileList(
-            $srcPath . 'views', $themePath . DIRECTORY_SEPARATOR . 'backend/views');
+            $srcPath . 'views/layouts', $themePath . DIRECTORY_SEPARATOR . 'backend/views/layouts');
+        unset($backendViews['_menu.php']);
+
         $backendCss = $this->buildFileList(
             $srcPath . 'css', $publicThemePath . DIRECTORY_SEPARATOR . 'backend/css');
         $backendLess = $this->buildFileList(

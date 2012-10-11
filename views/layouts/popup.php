@@ -20,8 +20,7 @@
 		  <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 
-		<?php Yii::app()->assetManager->publish(Yii::app()->theme->basePath.DIRECTORY_SEPARATOR.'css') ?>
-		<link href="<?php echo Yii::app()->assetManager->publish(Yii::app()->theme->basePath.DIRECTORY_SEPARATOR.'css'.DIRECTORY_SEPARATOR.'p3.css') ?>" rel="stylesheet">
+		<link href="<?php echo Yii::app()->theme->baseUrl.'/css/p3.css' ?>" rel="stylesheet">
 
 		<!-- Le fav and touch icons -->
 		<link rel="shortcut icon" href="images/favicon.ico">
