@@ -38,7 +38,7 @@ $this->widget('TbNavbar', array(
                                        'class' => 'TbMenu',
                                        'htmlOptions' => array('class' => 'pull-right'),
                                        'items' => array(
-                                           array('label' => 'Manage', 'url' => '#', 'visible' => !Yii::app()->user->isGuest, 'icon'=>'cog white', 'items' => array(
+                                           array('label' => 'Administration', 'url' => '#', 'visible' => !Yii::app()->user->isGuest, 'icon'=>'cog white', 'items' => array(
                                                array('label' => 'Upload Media', 'url' => array('/p3media/import/upload'), 'visible' => Yii::app()->user->checkAccess('P3media.Import.*')),
                                                array('label' => 'Edit Page Translation', 'url' => array('/p3pages/p3PageTranslation/update', 'id' => (P3Page::getActivePage()->getTranslationModel()) ? P3Page::getActivePage()->getTranslationModel()->id : null), 'visible' => Yii::app()->user->checkAccess('P3pages.P3PageTranslation.*') && P3Page::getActivePage()->getTranslationModel()),
                                                array('label' => 'Create Page Translation', 'url' => array('/p3pages/p3PageTranslation/create', 'P3PageTranslation' => array('p3_page_id' => P3Page::getActivePage()->id)), 'visible' => Yii::app()->user->checkAccess('P3pages.P3PageTranslation.*') && !P3Page::getActivePage()->getTranslationModel() && !P3Page::getActivePage()->isNewRecord),
@@ -59,7 +59,7 @@ $this->widget('TbNavbar', array(
                                                '---',
                                                array('label' => 'Logout', 'url' => array('/site/logout'), 'visible' => !Yii::app()->user->isGuest),
                                            )),
-                                           array('label' => 'Login', 'url' => Yii::app()->user->loginUrl, 'visible' => Yii::app()->user->isGuest),
+                                           array('label' => 'Login', 'url' => Yii::app()->user->loginUrl, 'visible' => Yii::app()->user->isGuest, 'icon' => 'lock white'),
                                        ),
                                    ),
                                ))
