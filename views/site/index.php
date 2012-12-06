@@ -1,5 +1,5 @@
 
-<?php $this->widget('p3widgets.components.P3WidgetContainer', array('id' => 'hero')) ?>
+<?php $this->widget('p3widgets.components.P3WidgetContainer', array('id' => 'top')) ?>
 
 <!-- Example row of columns -->
 <div class="row">
