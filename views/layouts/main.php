@@ -18,6 +18,7 @@
         <!--[if lt IE 9]>
           <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
+        <?php Yii::app()->bootstrap->registerCoreScripts(); ?>
         <link href="<?php echo Yii::app()->theme->baseUrl . '/css/p3.css' ?>" rel="stylesheet">
     </head>
 
