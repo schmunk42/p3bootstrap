@@ -2,8 +2,8 @@
     "name": "phundament/themes/p3bootstrap",
     "description": "Bootstrap Theme for Phundament 3",
     "keywords": ["bootstrap", "theme"],
-    "homepage": "http://phundament.com/",
-    "type": "library",
+    "homepage": "https://github.com/schmunk42/p3bootstrap",
+    "type": "yii-theme",
     "license": "BSD-3-Clause",
     "authors": [
         {
@@ -17,6 +17,10 @@
         "yiisoft/yii" : "1.1.*",
         "yii-application" : "*",
         "phundament/p3extensions": ">=0.7",
-        "crisu83/yii-bootstrap": "1.*"
+        "crisu83/yii-bootstrap": "2.*"
+    },
+    "require-dev": {
+        "twitter/bootstrap": "2.*",
+        "phundament/lessii": "dev-master"
     }
 }
