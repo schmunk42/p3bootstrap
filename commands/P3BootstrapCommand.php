@@ -41,11 +41,11 @@ EOS;
         $publicThemePath = realpath(Yii::getPathOfAlias($this->publicThemePath));
 
         if (!is_dir($themePath)) {
-            echo "\nInvalid 'theemPath', aborting.";
+            echo "\nInvalid 'themePath', aborting.";
             return;
         }
         if (!is_dir($publicThemePath)) {
-            echo "\nInvalid 'publicTheemPath', aborting.";
+            echo "\nInvalid 'publicThemePath', aborting.";
             return;
         }
 
