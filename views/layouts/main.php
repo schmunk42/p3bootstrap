@@ -20,8 +20,11 @@
         <?php
         $cs = Yii::app()->getClientScript();
         $cs->registerMetaTag('width=device-width, initial-scale=1.0', 'viewport');
-        $cs->registerCssFile(Yii::app()->theme->baseUrl.'/css/p3.css');
         $cs->registerLinkTag('shortcut icon', NULL, Yii::app()->theme->baseUrl.'/img/favicon.ico', NULL, NULL);
+
+        $cs->registerCssFile(Yii::app()->theme->baseUrl.'/css/p3.css');
+        // if you've installed crisu83/yii-less as a application component, comment line above and uncomment line below
+        //Yii::app()->less->register();
         ?>
     </head>
 

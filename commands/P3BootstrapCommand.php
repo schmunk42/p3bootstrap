@@ -53,6 +53,8 @@ EOS;
 
         $backendViews = $this->buildFileList(
             $srcPath . 'views/layouts', $themePath . DIRECTORY_SEPARATOR . 'backend/views/layouts');
+        $backendSkins = $this->buildFileList(
+            $srcPath . 'views/skins', $themePath . DIRECTORY_SEPARATOR . 'backend/views/skins');
         unset($backendViews['_menu.php']);
 
         $backendCss = $this->buildFileList(
@@ -61,7 +63,10 @@ EOS;
             $srcPath . 'less', $publicThemePath . DIRECTORY_SEPARATOR . 'backend/less');
 
         $frontendViews = $this->buildFileList(
-            $srcPath . 'views', $themePath . DIRECTORY_SEPARATOR . 'frontend/views');
+            $srcPath . 'views',
+            $themePath . DIRECTORY_SEPARATOR . 'frontend/views',
+            '',
+            array('skins'));
         $frontendCss = $this->buildFileList(
             $srcPath . 'css', $publicThemePath . DIRECTORY_SEPARATOR . 'frontend/css');
         $frontendLess = $this->buildFileList(
@@ -71,6 +76,7 @@ EOS;
 
         echo "\nCopying theme files for 'backend' theme...\n";
         $this->copyFiles($backendViews);
+        $this->copyFiles($backendSkins);
         $this->copyFiles($backendCss);
         $this->copyFiles($backendLess);
 
