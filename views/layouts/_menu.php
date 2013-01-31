@@ -1,7 +1,7 @@
 <?php
 Yii::import('p3pages.modules.*');
 
-$rootNode = P3Page::model()->findByAttributes(array('layout' => '_BootMenu'));
+$rootNode = P3Page::model()->findByAttributes(array('layout' => '_TbNavbar'));
 $this->widget('TbNavbar', array(
                                //'fluid' => true,
                                'collapse' => true,
