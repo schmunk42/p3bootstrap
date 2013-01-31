@@ -7,9 +7,11 @@
         <meta name="author" content="">
 
         <style type="text/css">
-            body {
-                padding-top: 60px;
-                padding-bottom: 40px;
+            @media (min-width: 989px) {
+                body {
+                    margin-top: 60px;
+                    padding-bottom: 40px;
+                }
             }
         </style>
 
