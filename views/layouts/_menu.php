@@ -46,7 +46,7 @@ $this->widget('TbNavbar', array(
                                                array('label' => 'Media', 'url' => array('/p3media'), 'visible' => Yii::app()->user->checkAccess('P3media.Default.*')),
                                                array('label' => 'Pages', 'url' => array('/p3pages'), 'visible' => Yii::app()->user->checkAccess('P3pages.Default.*')),
                                                array('label' => 'Widgets', 'url' => array('/p3widgets'), 'visible' => Yii::app()->user->checkAccess('P3widgets.Default.*')),
-                                               array('label' => 'Users', 'url' => array('/user'), 'visible' => !Yii::app()->user->isGuest),
+                                               array('label' => 'Users', 'url' => array('/user/admin/admin'), 'visible' => Yii::app()->user->checkAccess('Admin')),
                                                array('label' => 'Rights', 'url' => array('/rights'), 'visible' => Yii::app()->user->checkAccess('Admin')),
                                                '---',
                                                array('label' => 'Application', 'url' => array('/p3admin'), 'visible' => Yii::app()->user->checkAccess('Admin')),
@@ -56,6 +56,7 @@ $this->widget('TbNavbar', array(
                                            array('label' => ucfirst(Yii::app()->user->name), 'visible' => !Yii::app()->user->isGuest, 'icon'=>Yii::app()->user->isSuperuser?'warning-sign white':'user white', 'items' => array(
                                                array('label' => 'User Settings'),
                                                array('label' => 'Profile', 'url' => array('/user/profile'), 'visible' => !Yii::app()->user->isGuest),
+                                               array('label' => 'User List', 'url' => array('/user'), 'visible' => !Yii::app()->user->isGuest),
                                                '---',
                                                array('label' => 'Logout', 'url' => array('/site/logout'), 'visible' => !Yii::app()->user->isGuest),
                                            )),
