@@ -17,7 +17,7 @@
         "yiisoft/yii" : "1.1.*",
         "yii-application" : "*",
         "phundament/p3extensions": ">=0.7",
-        "crisu83/yii-bootstrap": ">=1.0,<3.0"
+        "crisu83/yii-bootstrap": "1.*"
     },
     "suggest": {
         "twitter/bootstrap": "Source files for LESS customization",
