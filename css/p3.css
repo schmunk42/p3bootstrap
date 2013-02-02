@@ -6,9 +6,6 @@
  * in order to get the imported files.
  */
 /* import bootrap */
-/* use bootstrap with blueprint translation (for old extensions) */
-/* DEVELOPMENT SETTINGS FOR PACKAGE */
-/* import bootrap */
 /*!
  * Bootstrap v2.2.2
  *
@@ -220,7 +217,7 @@ body {
   font-size: 13px;
   line-height: 18px;
   color: #333333;
-  background-color: #eeeeee;
+  background-color: #ffffff;
 }
 a {
   color: #0088cc;
@@ -2276,7 +2273,7 @@ table {
   border-top: 2px solid #dddddd;
 }
 .table .table {
-  background-color: #eeeeee;
+  background-color: #ffffff;
 }
 .table-condensed th,
 .table-condensed td {
@@ -4073,7 +4070,7 @@ input[type="submit"].btn.btn-mini {
 .nav-tabs > .active > a,
 .nav-tabs > .active > a:hover {
   color: #555555;
-  background-color: #eeeeee;
+  background-color: #ffffff;
   border: 1px solid #ddd;
   border-bottom-color: transparent;
   cursor: default;
@@ -7619,6 +7616,7 @@ a.badge:hover {
     overflow: visible !important;
   }
 }
+/* use bootstrap with blueprint translation (for old extensions) */
 /* IMPORT YOUR BOOTSTRAP FILES 
 
 @import "../../../twitter/bootstrap/less/bootstrap.less";
@@ -7939,6 +7937,8 @@ div.form INPUT[type="submit"] .caret {
   border-top-color: #ffffff;
   border-bottom-color: #ffffff;
 }
+/* DEVELOPMENT SETTINGS FOR PACKAGE */
+/* import bootrap */
 /* override variables with local values */
 html {
   overflow-y: scroll;
