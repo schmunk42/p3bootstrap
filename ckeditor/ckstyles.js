@@ -272,7 +272,7 @@ CKEDITOR.addStylesSet( 'my_styles',
     },
 
     {
-        name : 'button',
+        name : 'button normal',
         element : 'a',
         attributes : {
             'class' : 'btn'
