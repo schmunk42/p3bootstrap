@@ -27,6 +27,8 @@
         $cs->registerCssFile(Yii::app()->theme->baseUrl.'/css/p3.css');
         // if you've installed crisu83/yii-less as a application component, comment line above and uncomment line below
         //Yii::app()->less->register();
+
+        //Yii::app()->bootstrap->register(); #yii-bootstrap 2.x
         ?>
     </head>
 
