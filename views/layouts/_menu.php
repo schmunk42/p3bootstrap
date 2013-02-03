@@ -28,8 +28,8 @@ $this->widget('TbNavbar', array(
                                                    array('label' => 'Choose Language'),
                                                    array('label' => 'English', 'url' => array_merge(array(''), $_GET, array('lang' => 'en'))),
                                                    array('label' => 'Deutsch', 'url' => array_merge(array(''), $_GET, array('lang' => 'de'))),
-                                                   array('label' => 'Français', 'url' => array_merge(array(''), $_GET, array('lang' => 'fr'))),
-                                                   array('label' => 'Русский', 'url' => array_merge(array(''), $_GET, array('lang' => 'ru'))),
+                                                   //array('label' => 'Français', 'url' => array_merge(array(''), $_GET, array('lang' => 'fr'))),
+                                                   //array('label' => 'Русский', 'url' => array_merge(array(''), $_GET, array('lang' => 'ru'))),
                                                ),
                                            )
                                        )
