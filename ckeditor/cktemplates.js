@@ -28,13 +28,6 @@ CKEDITOR.addTemplates('default',
                         <li class="span4">'+loremImage+'</li> \
                         <li class="span2">'+loremImage+'</li> \
                         <li class="span2">'+loremImage+'</li> \
-                        <li class="span2">'+loremImage+'</li> \
-                        <li class="span2">'+loremImage+'</li> \
-                        <li class="span2">'+loremImage+'</li> \
-                        <li class="span2">'+loremImage+'</li> \
-                        <li class="span2">'+loremImage+'</li> \
-                        <li class="span2">'+loremImage+'</li> \
-                        <li class="span2">'+loremImage+'</li> \
                       </ul>' +
                     '</div>'
             },
