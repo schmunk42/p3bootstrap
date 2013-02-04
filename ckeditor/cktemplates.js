@@ -17,9 +17,9 @@ CKEDITOR.addTemplates('default',
         // The templates definitions.
         templates:[
             {
-                title:'Default',
+                title:'Headline, text, thumbnails',
                 image:'',
-                description:'Heading, paragraph, thumbnails, subheading, paragraph. HINT: Use a FancyBox Widget for zoomable thumbnails.',
+                description:'HINT: Use a FancyBox Widget for zoomable thumbnails.',
                 html:'<h2>' + loremIpsum.substr(0, 20) + '</h2>' +
                     '<p>' + loremIpsum + '</p>' +
                     '<p>' + loremIpsum + loremIpsum + '</p>' +
@@ -32,9 +32,18 @@ CKEDITOR.addTemplates('default',
                     '</div>'
             },
             {
-                title:'Row full width, 33%-33%-33% columns with images',
+                title:'Text, button',
                 image:'',
-                description:'span4 span4 span4',
+                description:'',
+                html:'<p>' + loremIpsum + '</p>' +
+                    '<p>' + loremIpsum + '</p>' +
+                    '<p><a class="btn" href="#">View details »</a></p>' +
+                    '</div>'
+            },
+            {
+                title:'Headline + 3x image with text',
+                image:'',
+                description:'Template: 33%-33%-33% columns',
                 html:'<h2>' + loremIpsum.substr(0, 20) + '</h2>' +
                     '<div class="row">' +
                     '<div class="span4"><p>'+loremImage+'</p><p>' + loremIpsum + '</p></div>' +
@@ -43,67 +52,50 @@ CKEDITOR.addTemplates('default',
                     '</div>'
             },
             {
-                title:'Row full width, 50%-50% columns',
+                title:'1 empty columns',
                 image:'',
-                description:'span6 span6',
-                html:'<h2>' + loremIpsum.substr(0, 20) + '</h2>' +
+                description:'Template: 100%',
+                html:
                     '<div class="row">' +
-                    '<div class="span6"><p>' + loremIpsum + '</p></div>' +
-                    '<div class="span6"><p>' + loremIpsum + '</p></div>' +
+                        '<div class="span12"></div>' +
+                        '</div>'
+
+            },
+            {
+                title:'2 empty columns',
+                image:'',
+                description:'Template: 50%-50%',
+                html:
+                    '<div class="row">' +
+                    '<div class="span6"></div>' +
+                    '<div class="span6"></div>' +
                     '</div>'
 
             },
             {
-                title:'Row full width, 66%-33% columns',
+                title:'3 empty columns',
                 image:'',
-                description:'span8 span4',
-                html:'<h2>' + loremIpsum.substr(0, 20) + '</h2>' +
+                description:'Template: 33%-33%-33%',
+                html:
                     '<div class="row">' +
-                    '<div class="span8"><p>' + loremIpsum + '</p></div>' +
-                    '<div class="span4"><p>' + loremIpsum + '</p></div>' +
+                    '<div class="span4"></div>' +
+                    '<div class="span4"></div>' +
+                    '<div class="span4"></div>' +
                     '</div>'
+
             },
             {
-                title:'Row full width, 33%-66% columns',
+                title:'4 empty columns',
                 image:'',
-                description:'span4 span8',
-                html:'<h2>' + loremIpsum.substr(0, 20) + '</h2>' +
+                description:'Template: 25%-25%-25-25%',
+                html:
                     '<div class="row">' +
-                    '<div class="span4"><p>' + loremIpsum + '</p></div>' +
-                    '<div class="span8"><p>' + loremIpsum + '</p></div>' +
+                    '<div class="span3"></div>' +
+                    '<div class="span3"></div>' +
+                    '<div class="span3"></div>' +
+                    '<div class="span3"></div>' +
                     '</div>'
-            },
-            {
-                title:'Row full width, 25%-25%-25%-25% columns',
-                image:'',
-                description:'span3 span3 span3 span3',
-                html:'<h2>' + loremIpsum.substr(0, 20) + '</h2>' +
-                    '<div class="row">' +
-                    '<div class="span3"><p>' + loremIpsum + '</p></div>' +
-                    '<div class="span3"><p>' + loremIpsum + '</p></div>' +
-                    '<div class="span3"><p>' + loremIpsum + '</p></div>' +
-                    '<div class="span3"><p>' + loremIpsum + '</p></div>' +
-                    '</div>'
-            },
-            {
-                title:'Row 3/4 width, one column',
-                image:'',
-                description:'span10',
-                html:'<h2>' + loremIpsum.substr(0, 20) + '</h2>' +
-                    '<div class="row">' +
-                    '<div class="span10"><p>' + loremIpsum + '</p></div>' +
-                    '</div>'
-            },
-            {
-                title:'Row 2/3 width, 50%-50% columns',
-                image:'',
-                description:'span4 span4',
-                html:'<h2>' + loremIpsum.substr(0, 20) + '</h2>' +
-                    '<div class="row">' +
-                    '<div class="span4"><p>' + loremIpsum + '</p></div>' +
-                    '<div class="span4"><p>' + loremIpsum + '</p></div>' +
-                    '</div>'
+
             }
-
         ]
     });
