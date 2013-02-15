@@ -4,6 +4,8 @@
  * This file is copied from p3bootstrap. You have to run
  * php composer.phar install --dev
  * in order to get the imported files.
+ *
+ * paths are adjustes to work from ./www/themes/THEMENAME
  */
 
 /* import bootrap */
@@ -11,53 +13,60 @@
 @import "../../../../vendor/twitter/bootstrap/less/responsive.less";
 /* use bootstrap with blueprint translation (for old extensions) */
 @import "../../../../vendor/phundament/lessii/translations/blueprint-bootstrap.less";
-
-
-/* DEVELOPMENT SETTINGS FOR PACKAGE */
-/* import bootrap */
-//@import "../../../../twitter/bootstrap/less/bootstrap.less";
-//@import "../../../../twitter/bootstrap/less/responsive.less";
-//@import "../../../lessii/translations/blueprint-bootstrap.less";
-
-
 /* override variables with local values */
 @import "variables.less";
 
-html {
-    overflow-y: scroll;
-}
+/* use composer.phar require thomaspark/bootswatch */
+//@import "../../../../vendor/thomaspark/bootswatch/journal/variables.less";
+//@import "../../../../vendor/thomaspark/bootswatch/journal/bootswatch.less";
 
+/* fix responsive images */
 img {
   height: auto !important;
 }
 
+/* adjust content with fixed navbar */
+@media (min-width: 989px) {
+  body {
+    margin-top: 60px;
+    padding-bottom: 40px;
+  }
+}
+
+/* TODO: temp fix from https://github.com/twitter/bootstrap/issues/4550#issuecomment-10398831 */
+@media (max-width: 988px) {
+  .dropdown ul.dropdown-menu {
+    display: block;
+  }
+}
 
 /* iPhone Hacks */
 @media (max-width: 480px) {
-    .je-node INPUT {
-        width: 30%;
-    }
-    .cke_dialog {
-        zoom: 0.5;
-    }
+  .je-node INPUT {
+    width: 30%;
+  }
 
-    div.form .row LABEL,
-    div.form .row INPUT,
-    div.form .row SELECT,
-    div.form .row TEXTAREA,
-    div.form .row .hint {
-        text-align: left;
-        margin-left: 0px;
-    }
+  .cke_dialog {
+    zoom: 0.5;
+  }
+
+  div.form .row LABEL,
+  div.form .row INPUT,
+  div.form .row SELECT,
+  div.form .row TEXTAREA,
+  div.form .row .hint {
+    text-align: left;
+    margin-left: 0px;
+  }
 }
 
 .ckeditor LI {
-    height: 180px;
+  height: 180px;
 }
 
 #p3-media-grid IMG.ckeditor {
-    height: auto;
-    width: 150px;
-    max-width: 150px;
-    max-height: 120px;
+  height: auto;
+  width: 150px;
+  max-width: 150px;
+  max-height: 120px;
 }

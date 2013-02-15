@@ -6,21 +6,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <style type="text/css">
-        @media (min-width: 989px) {
-            body {
-                margin-top: 60px;
-                padding-bottom: 40px;
-            }
-        }
-        /* TODO: temp fix from https://github.com/twitter/bootstrap/issues/4550#issuecomment-10398831 */
-        @media (max-width: 980px) {
-            .dropdown ul.dropdown-menu {
-                display: block;
-            }
-        }
-    </style>
-
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
     <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -30,11 +15,10 @@
     $cs->registerMetaTag('width=device-width, initial-scale=1.0', 'viewport');
     $cs->registerLinkTag('shortcut icon', NULL, Yii::app()->theme->baseUrl . '/img/favicon.ico', NULL, NULL);
 
+    // CSS files
     $cs->registerCssFile(Yii::app()->theme->baseUrl . '/css/p3.css');
     // if you've installed crisu83/yii-less as a application component, comment line above and uncomment line below
-    //Yii::app()->less->register();
-
-    //Yii::app()->bootstrap->register(); #yii-bootstrap 2.x
+    #Yii::app()->less->register();
     ?>
 </head>
 
