@@ -15,7 +15,6 @@
     "require": {
         "php": ">=5.3.0",
         "yiisoft/yii" : "1.1.*",
-        "yii-application" : "*",
         "phundament/p3extensions": ">=0.7",
         "crisu83/yii-bootstrap": "1.*"
     },
