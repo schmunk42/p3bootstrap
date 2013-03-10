@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo Yii::app()->language ?>">
 <head>
     <meta charset="utf-8">
     <title><?php echo CHtml::encode($this->pageTitle); ?></title>
-    <meta name="description" content="">
+    <meta name="description" content="<?php echo P3Page::getActivePage()->t('description') ?>">
+    <meta name="keywords" content="<?php echo P3Page::getActivePage()->t('keywords') ?>">
     <meta name="author" content="">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -18,6 +19,7 @@
     // CSS files
     $cs->registerCssFile(Yii::app()->theme->baseUrl . '/css/p3.css');
     // if you've installed crisu83/yii-less as a application component, comment line above and uncomment line below
+    #Yii::app()->less->files = array('themes/frontend/less/p3.less' => 'themes/frontend/css/p3.css');
     #Yii::app()->less->register();
     ?>
 </head>
