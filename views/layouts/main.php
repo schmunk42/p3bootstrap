@@ -34,7 +34,7 @@
     </div>
     <hr>
     <footer>
-        <?php $this->widget('p3widgets.components.P3WidgetContainer', array('id' => 'footer')) ?>
+        Powered by <a href="http://phundament.com">Phundament</a>
     </footer>
 </div>
 <!-- /container -->
