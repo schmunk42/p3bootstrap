@@ -75,7 +75,7 @@ $this->widget('TbNavbar', array(
                                                      array('label' => 'Application', 'url' => array('/p3admin'),
                                                            'visible' => Yii::app()->user->checkAccess('Admin')),
                                                      '---',
-                                                     array('label' => 'Visit Phundament 3 Website',
+                                                     array('label' => 'Visit Phundament Website',
                                                            'url' => 'http://phundament.com'),
                                                  )),
                                            array('label' => ucfirst(Yii::app()->user->name),
