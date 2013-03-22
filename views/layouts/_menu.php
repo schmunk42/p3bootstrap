@@ -55,16 +55,22 @@ $this->widget('TbNavbar', array(
                                                          'id'        => (P3Page::getActivePage()
                                                              ->getTranslationModel()) ?
                                                              P3Page::getActivePage()->getTranslationModel()->id : null,
-                                                         'returnUrl' => $this->createUrl(null)),
+                                                         'returnUrl' => $_SERVER['REQUEST_URI']),
                                                            'visible' => Yii::app()->user->checkAccess('P3pages.P3PageTranslation.*') && P3Page::getActivePage()
                                                                ->getTranslationModel()),
                                                      array('label'   => 'Create Page Translation', 'url' => array(
                                                          '/p3pages/p3PageTranslation/create',
-                                                         'returnUrl'         => $this->createUrl(null),
+                                                         'returnUrl'         => $_SERVER['REQUEST_URI'],
                                                          'P3PageTranslation' => array('p3_page_id' => P3Page::getActivePage()->id,
                                                                                       'language'   => Yii::app()->language)),
                                                            'visible' => Yii::app()->user->checkAccess('P3pages.P3PageTranslation.*') && !P3Page::getActivePage()
                                                                ->getTranslationModel() && !P3Page::getActivePage()->isNewRecord),
+                                                     array('label'   => 'Edit Page Template', 'url' => array(
+                                                         '/p3pages/p3Page/update',
+                                                         'id'        => (P3Page::getActivePage()) ?
+                                                             P3Page::getActivePage()->id : null,
+                                                         'returnUrl' => $_SERVER['REQUEST_URI']),
+                                                           'visible' => Yii::app()->user->checkAccess('P3pages.P3PageTranslation.*') && P3Page::getActivePage()->id),
                                                      '---',
                                                      array('label'   => 'Media', 'url' => array('/p3media'),
                                                            'visible' => Yii::app()->user->checkAccess('P3media.Default.*')),
@@ -84,7 +90,7 @@ $this->widget('TbNavbar', array(
                                                      array('label'   => 'Rights', 'url' => array('/rights'),
                                                            'visible' => Yii::app()->user->checkAccess('Admin')),
                                                      '---',
-                                                     array('label'   => 'Application', 'url' => array('/p3admin'),
+                                                     array('label'   => 'Application', 'url' => array('/p3admin/default/settings'),
                                                            'visible' => Yii::app()->user->checkAccess('Admin')),
                                                  )
                                            ),
@@ -107,6 +113,22 @@ $this->widget('TbNavbar', array(
                                                  'visible' => Yii::app()->user->isGuest, 'icon' => 'lock white'),
                                        ),
                                    ),
-                               ))
+                                   /* P3 Widget Edit Button
+                                   array(
+                                       'class'       => 'TbMenu',
+                                       'htmlOptions' => array('class' => 'pull-right'),
+                                       'items'       => array(
+                                           array(
+                                               'icon'        => 'edit white',
+                                               'url'         => '#',
+                                               'itemOptions' => array(
+                                                   "id" => "p3widget-mode",
+                                                   'onclick' => "console.log(this);$('.icon-edit',this).toggleClass('icon-white');"
+                                               )
+                                           )
+                                       )
+                                   ),*/
+                               )
+                          )
 );
 ?>
