@@ -1,9 +1,12 @@
 <?php
+$title = $this->pageTitle;
 $this->pageTitle = Yii::app()->name . ' - ' . $this->pageTitle;
 $this->breadcrumbs = array(
-	$this->pageTitle,
+	$title,
 );
 ?>
+
+<?php $this->widget("TbBreadcrumbs", array("links"=>$this->breadcrumbs)) ?>
 
 <div class="row">
 	<div class="span12">
