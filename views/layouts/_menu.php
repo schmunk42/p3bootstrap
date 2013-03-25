@@ -2,133 +2,192 @@
 Yii::import('p3pages.modules.*');
 
 $rootNode = P3Page::model()->findByAttributes(array('layout' => '_TbNavbar'));
-$this->widget('TbNavbar', array(
-                               //'fluid' => true,
-                               'collapse' => true,
-                               'items'    => array(
-                                   array(
-                                       'class' => 'TbMenu',
-                                       /* 'items' => array(
-                                         array('label' => 'Home', 'url' => array('/site/index')),
-                                         array('label' => 'About', 'url' => array('/site/page', 'view' => 'about')),
-                                         array('label' => 'Contact', 'url' => array('/site/contact')),
-                                         array('label' => 'Wiki', 'url' => array('/wiki')),
-                                         array('label' => 'Widget Demo', 'url' => array('/site/page', 'view' => 'widgets')),
-                                         ), */
-                                       'items' => P3Page::getMenuItems($rootNode)
-                                   ),
-                                   //'<form class="navbar-search pull-left" action=""><input type="text" class="search-query span2" placeholder="Search"></form>',
-                                   array(
-                                       'class'       => 'TbMenu',
-                                       'htmlOptions' => array('class' => 'pull-right'),
-                                       'items'       => array(
-                                           array(
-                                               'label' => Yii::app()->language,
-                                               'icon'  => 'globe white',
-                                               'url'   => '#',
-                                               'items' => array(
-                                                   array('label' => 'Choose Language'),
-                                                   array('label' => 'English',
-                                                         'url'   => array_merge(array(''), $_GET, array('lang' => 'en'))),
-                                                   array('label' => 'Deutsch',
-                                                         'url'   => array_merge(array(''), $_GET, array('lang' => 'de'))),
-                                                   //array('label' => 'Français', 'url' => array_merge(array(''), $_GET, array('lang' => 'fr'))),
-                                                   //array('label' => 'Русский', 'url' => array_merge(array(''), $_GET, array('lang' => 'ru'))),
-                                               ),
-                                           )
-                                       )
-                                   ),
-                                   array(
-                                       'class'       => 'TbMenu',
-                                       'htmlOptions' => array('class' => 'pull-right'),
-                                       'items'       => array(
-                                           array('url'     => '#',
-                                                 'visible' => Yii::app()->user->checkAccess('Editor'),
-                                                 'icon'    => 'pencil white',
-                                                 'items'   => array(
-                                                     array('label' => 'Manage Content'),
-                                                     array('label'   => 'Upload Media',
-                                                           'url'     => array('/p3media/import/upload'),
-                                                           'visible' => Yii::app()->user->checkAccess('P3media.Import.*')),
-                                                     array('label'   => 'Edit Page Translation', 'url' => array(
-                                                         '/p3pages/p3PageTranslation/update',
-                                                         'id'        => (P3Page::getActivePage()
-                                                             ->getTranslationModel()) ?
-                                                             P3Page::getActivePage()->getTranslationModel()->id : null,
-                                                         'returnUrl' => $_SERVER['REQUEST_URI']),
-                                                           'visible' => Yii::app()->user->checkAccess('P3pages.P3PageTranslation.*') && P3Page::getActivePage()
-                                                               ->getTranslationModel()),
-                                                     array('label'   => 'Create Page Translation', 'url' => array(
-                                                         '/p3pages/p3PageTranslation/create',
-                                                         'returnUrl'         => $_SERVER['REQUEST_URI'],
-                                                         'P3PageTranslation' => array('p3_page_id' => P3Page::getActivePage()->id,
-                                                                                      'language'   => Yii::app()->language)),
-                                                           'visible' => Yii::app()->user->checkAccess('P3pages.P3PageTranslation.*') && !P3Page::getActivePage()
-                                                               ->getTranslationModel() && !P3Page::getActivePage()->isNewRecord),
-                                                     array('label'   => 'Edit Page Template', 'url' => array(
-                                                         '/p3pages/p3Page/update',
-                                                         'id'        => (P3Page::getActivePage()) ?
-                                                             P3Page::getActivePage()->id : null,
-                                                         'returnUrl' => $_SERVER['REQUEST_URI']),
-                                                           'visible' => Yii::app()->user->checkAccess('P3pages.P3PageTranslation.*') && P3Page::getActivePage()->id),
-                                                     '---',
-                                                     array('label'   => 'Media', 'url' => array('/p3media'),
-                                                           'visible' => Yii::app()->user->checkAccess('P3media.Default.*')),
-                                                     array('label'   => 'Pages', 'url' => array('/p3pages'),
-                                                           'visible' => Yii::app()->user->checkAccess('P3pages.Default.*')),
-                                                     array('label'   => 'Widgets', 'url' => array('/p3widgets'),
-                                                           'visible' => Yii::app()->user->checkAccess('P3widgets.Default.*')),
-                                                 )
-                                           ),
-                                           array('url'     => '#',
-                                                 'visible' => Yii::app()->user->checkAccess('Admin'),
-                                                 'icon'    => 'cog white',
-                                                 'items'   => array(
-                                                     array('label' => 'Manage Application'),
-                                                     array('label'   => 'Users', 'url' => array('/user/admin/admin'),
-                                                           'visible' => Yii::app()->user->checkAccess('Admin')),
-                                                     array('label'   => 'Rights', 'url' => array('/rights'),
-                                                           'visible' => Yii::app()->user->checkAccess('Admin')),
-                                                     '---',
-                                                     array('label'   => 'Application', 'url' => array('/p3admin/default/settings'),
-                                                           'visible' => Yii::app()->user->checkAccess('Admin')),
-                                                 )
-                                           ),
-                                           array('label'   => ucfirst(Yii::app()->user->name),
-                                                 'visible' => !Yii::app()->user->isGuest,
-                                                 'icon'    => Yii::app()->user->isSuperuser ?
-                                                     'warning-sign white' :
-                                                     'user white',
-                                                 'items'   => array(
-                                                     array('label' => 'User Settings'),
-                                                     array('label'   => 'Profile', 'url' => array('/user/profile'),
-                                                           'visible' => !Yii::app()->user->isGuest),
-                                                     array('label'   => 'User List', 'url' => array('/user'),
-                                                           'visible' => !Yii::app()->user->isGuest),
-                                                     '---',
-                                                     array('label'   => 'Logout', 'url' => array('/site/logout'),
-                                                           'visible' => !Yii::app()->user->isGuest),
-                                                 )),
-                                           array('label'   => 'Login', 'url' => Yii::app()->user->loginUrl,
-                                                 'visible' => Yii::app()->user->isGuest, 'icon' => 'lock white'),
-                                       ),
-                                   ),
-                                   /* P3 Widget Edit Button
-                                   array(
-                                       'class'       => 'TbMenu',
-                                       'htmlOptions' => array('class' => 'pull-right'),
-                                       'items'       => array(
-                                           array(
-                                               'icon'        => 'edit white',
-                                               'url'         => '#',
-                                               'itemOptions' => array(
-                                                   "id" => "p3widget-mode",
-                                                   'onclick' => "console.log(this);$('.icon-edit',this).toggleClass('icon-white');"
-                                               )
-                                           )
-                                       )
-                                   ),*/
-                               )
-                          )
+$page     = P3Page::getActivePage();
+if ($page !== null) {
+    $translation = $page->getTranslationModel();
+}
+else {
+    $translation = null;
+}
+
+$this->widget(
+    'TbNavbar',
+    array(
+         //'fluid' => true,
+         'collapse' => true,
+         'items'    => array(
+             array(
+                 'class' => 'TbMenu',
+                 'items' => P3Page::getMenuItems($rootNode)
+             ),
+             //'<form class="navbar-search pull-left" action=""><input type="text" class="search-query span2" placeholder="Search"></form>',
+             array(
+                 'class'       => 'TbMenu',
+                 'htmlOptions' => array('class' => 'pull-right'),
+                 'items'       => array(
+                     array(
+                         'label' => Yii::app()->language,
+                         'icon'  => 'globe white',
+                         'url'   => '#',
+                         'items' => array(
+                             array('label' => 'Choose Language'),
+                             array('label' => 'English',
+                                   'url'   => array_merge(array(''), $_GET, array('lang' => 'en'))),
+                             array('label' => 'Deutsch',
+                                   'url'   => array_merge(array(''), $_GET, array('lang' => 'de'))),
+                         ),
+                     )
+                 )
+             ),
+             array(
+                 'class'       => 'TbMenu',
+                 'htmlOptions' => array('class' => 'pull-right'),
+                 'items'       => array(
+                     array('url'     => '#',
+                           'visible' => Yii::app()->user->checkAccess('Editor'),
+                           'icon'    => 'folder-open white',
+                           'items'   => array(
+                               array('label' => 'Media'),
+                               array('label'   => 'Upload',
+                                     'icon'    => 'circle-arrow-up',
+                                     'url'     => array('/p3media/import/upload'),
+                                     'visible' => Yii::app()->user->checkAccess('P3media.Import.*')),
+                               array('label'   => 'Browse',
+                                     'icon'    => 'th',
+                                     'url'     => array('/p3media'),
+                                     'visible' => Yii::app()->user->checkAccess('P3media.Default.*')),
+                               '---',
+                               array('label' => 'Pages'),
+                               array('label'   => 'Translation',
+                                     'icon'    => 'pencil',
+                                     'url'     => array(
+                                         '/p3pages/p3PageTranslation/create',
+                                         'returnUrl'         => $_SERVER['REQUEST_URI'],
+                                         'P3PageTranslation' => array(
+                                             'p3_page_id' => ($page) ? $page->id : null,
+                                             'language'   => Yii::app()->language
+                                         )
+                                     ),
+                                     'visible' => Yii::app()->user->checkAccess('P3pages.P3PageTranslation.*') && $page && !$translation),
+                               array('label'   => 'Translation',
+                                     'icon'    => 'pencil',
+                                     'url'     => array(
+                                         '/p3pages/p3PageTranslation/update',
+                                         'returnUrl' => $_SERVER['REQUEST_URI'],
+                                         'id'        => ($translation) ? $translation->id : null
+                                     ),
+
+                                     'visible' => Yii::app()->user->checkAccess('P3pages.P3PageTranslation.*') && $page && $translation),
+                               array('label'   => 'Template',
+                                     'icon'    => 'wrench',
+                                     'url'     => array(
+                                         '/p3pages/p3Page/update',
+                                         'id'        => ($page) ? $page->id : null,
+                                         'returnUrl' => $_SERVER['REQUEST_URI']),
+                                     'visible' => Yii::app()->user->checkAccess('P3pages.P3PageTranslation.*') && $page),
+                               array('label'   => 'Append Child Page',
+                                     'icon'    => 'plus',
+                                     'url'     => array(
+                                         '/p3pages/p3Page/createChild',
+                                         'returnUrl'  => $_SERVER['REQUEST_URI'],
+                                         'P3PageMeta' => array(
+                                             'treeParent_id' => ($page) ? $page->id : null,
+                                         )
+                                     ),
+                                     'visible' => Yii::app()->user->checkAccess('P3pages.P3Page.*') && $page),
+                               array('label'   => 'Append Sibling Page',
+                                     'icon'    => 'plus-sign',
+                                     'url'     => array(
+                                         '/p3pages/p3Page/createChild',
+                                         'returnUrl'  => $_SERVER['REQUEST_URI'],
+                                         'P3PageMeta' => array(
+                                             'treeParent_id' => ($page && $page->getParent()) ? $page->getParent()->id :
+                                                 null
+                                         )
+                                     ),
+                                     'visible' => Yii::app()->user->checkAccess('P3pages.P3Page.*') && $page),
+                               array('label'   => 'Sitemap',
+                                     'icon'    => 'list',
+                                     'url'     => array('/p3pages'),
+                                     'visible' => Yii::app()->user->checkAccess('P3pages.Default.*')),
+                               '---',
+                               array('label' => 'Widgets'),
+                               array('label'   => 'Manage',
+                                     'icon'    => 'list-alt',
+                                     'url'     => array('/p3widgets'),
+                                     'visible' => Yii::app()->user->checkAccess('P3widgets.Default.*')),
+                               '---',
+                               array('label' => 'Application'),
+                               array('label'   => 'Overview',
+                                     'icon'    => 'list-alt',
+                                     'url'     => array('/p3admin'),
+                                     'visible' => Yii::app()->user->checkAccess('Editor')),
+                           )
+                     ),
+                     array('url'     => '#',
+                           'visible' => Yii::app()->user->checkAccess('Admin'),
+                           'icon'    => 'cog white',
+                           'items'   => array(
+                               array('label' => 'Application'),
+                               array('label'   => 'Users',
+                                     'icon'    => 'user',
+                                     'url'     => array('/user/admin/admin'),
+                                     'visible' => Yii::app()->user->checkAccess('Admin')),
+                               array('label'   => 'Rights',
+                                     'icon'    => 'briefcase',
+                                     'url'     => array('/rights'),
+                                     'visible' => Yii::app()->user->checkAccess('Admin')),
+                               '---',
+                               array('label'   => 'Settings',
+                                     'icon'    => 'certificate',
+                                     'url'     => array('/p3admin/default/settings'),
+                                     'visible' => Yii::app()->user->checkAccess('Admin')),
+                           )
+                     ),
+                     array('label'   => ucfirst(Yii::app()->user->name),
+                           'visible' => !Yii::app()->user->isGuest,
+                           'icon'    => Yii::app()->user->isSuperuser ?
+                               'warning-sign white' :
+                               'user white',
+                           'items'   => array(
+                               array('label' => 'User'),
+                               array('label'   => 'Profile',
+                                     'icon'    => 'tasks',
+                                     'url'     => array('/user/profile'),
+                                     'visible' => !Yii::app()->user->isGuest),
+                               array('label'   => 'List',
+                                     'icon'    => 'list',
+                                     'url'     => array('/user'),
+                                     'visible' => !Yii::app()->user->isGuest),
+                               '---',
+                               array('label'   => 'Logout',
+                                     'icon'    => 'lock',
+                                     'url'     => array('/site/logout'),
+                                     'visible' => !Yii::app()->user->isGuest),
+                           )),
+                     array('label'   => 'Login',
+                           'url'     => Yii::app()->user->loginUrl,
+                           'visible' => Yii::app()->user->isGuest,
+                           'icon'    => 'lock white'),
+                 ),
+             ),
+             array(
+                 'class'       => 'TbMenu',
+                 'htmlOptions' => array('class' => 'pull-right'),
+                 'items'       => array(
+                     array(
+                         'icon'        => 'edit white',
+                         'url'         => '#',
+                         'visible'     => Yii::app()->user->checkAccess('Editor'),
+                         'itemOptions' => array(
+                             "id"      => "P3WidgetContainerShowControls",
+                             'class'   => 'edit',
+                             'onclick' => "$('i',this).toggleClass('icon-edit icon-eye-open'); $(this).toggleClass('edit view');",
+                         )
+                     )
+                 )
+             ),
+         )
+    )
 );
 ?>
