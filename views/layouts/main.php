@@ -17,10 +17,13 @@
     $cs->registerLinkTag('shortcut icon', NULL, Yii::app()->theme->baseUrl . '/img/favicon.ico', NULL, NULL);
 
     // CSS files
-    $cs->registerCssFile(Yii::app()->theme->baseUrl . '/css/p3.css');
-    // if you've installed crisu83/yii-less as a application component, comment line above and uncomment line below
-    #Yii::app()->less->files = array('themes/frontend/less/p3.less' => 'themes/frontend/css/p3.css');
-    #Yii::app()->less->register();
+    if (Yii::app()->hasComponent('less')) {
+        Yii::app()->less->files = array('themes/frontend/less/p3.less' => 'themes/frontend/css/p3.css');
+        Yii::app()->less->register();
+    }
+    else {
+        $cs->registerCssFile(Yii::app()->theme->baseUrl . '/css/p3.css');
+    }
     ?>
 </head>
 
