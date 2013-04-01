@@ -20,6 +20,11 @@
 //@import "../../../../vendor/thomaspark/bootswatch/journal/variables.less";
 //@import "../../../../vendor/thomaspark/bootswatch/journal/bootswatch.less";
 
+/* force scrollbars */
+html {
+  overflow-y: scroll;
+}
+
 /* fix responsive images */
 img {
   height: auto !important;
@@ -30,6 +35,17 @@ img {
   body {
     margin-top: 60px;
     padding-bottom: 40px;
+  }
+}
+
+.hint {
+  color: @grayLight;
+  font-style: italic;
+}
+
+@media (max-width: 767px) {
+  .hint {
+    margin-bottom: 0.5em;
   }
 }
 
