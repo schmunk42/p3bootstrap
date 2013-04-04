@@ -1,7 +1,7 @@
 {
-    "name": "phundament/themes/p3bootstrap",
-    "description": "Bootstrap Theme for Phundament 3",
-    "keywords": ["bootstrap", "theme"],
+    "name": "phundament/p3bootstrap",
+    "description": "Bootstrap Theme for Phundament",
+    "keywords": ["yii", "bootstrap", "theme"],
     "homepage": "https://github.com/schmunk42/p3bootstrap",
     "type": "yii-theme",
     "license": "BSD-3-Clause",
