@@ -18,7 +18,7 @@
 
     // CSS files
     if (Yii::app()->hasComponent('less')) {
-        Yii::app()->less->files = array('themes/frontend/less/p3.less' => 'themes/frontend/css/p3.css');
+        Yii::app()->less->files = array('themes/'.Yii::app()->theme->name.'/less/p3.less' => 'themes/'.Yii::app()->theme->name.'/css/p3.css');
         Yii::app()->less->register();
     }
     else {
