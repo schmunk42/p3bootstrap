@@ -45,7 +45,7 @@ $this->widget(
                  'items'       => array(
                      array('url'     => '#',
                            'visible' => Yii::app()->user->checkAccess('Editor'),
-                           'icon'    => 'folder-open white',
+                           'icon'    => 'pencil white',
                            'items'   => array(
                                array('label' => 'Media'),
                                array('label'   => 'Upload',
@@ -176,13 +176,13 @@ $this->widget(
                  'htmlOptions' => array('class' => 'pull-right'),
                  'items'       => array(
                      array(
-                         'icon'        => 'edit white',
+                         'icon'        => 'eye-open white',
                          'url'         => '#',
                          'visible'     => Yii::app()->user->checkAccess('Editor'),
                          'itemOptions' => array(
                              "id"      => "P3WidgetContainerShowControls",
                              'class'   => 'edit',
-                             'onclick' => "$('i',this).toggleClass('icon-edit icon-eye-open'); $(this).toggleClass('edit view');",
+                             'onclick' => "$('i',this).toggleClass('icon-eye-open icon-edit'); $(this).toggleClass('edit view');",
                          )
                      )
                  )
