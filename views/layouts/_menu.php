@@ -62,7 +62,7 @@ $this->widget(
                                      'icon'    => 'pencil',
                                      'url'     => array(
                                          '/p3pages/p3PageTranslation/create',
-                                         'returnUrl'         => $_SERVER['REQUEST_URI'],
+                                         'returnUrl'         => getenv('REQUEST_URI'),
                                          'P3PageTranslation' => array(
                                              'p3_page_id' => ($page) ? $page->id : null,
                                              'language'   => Yii::app()->language
@@ -73,7 +73,7 @@ $this->widget(
                                      'icon'    => 'pencil',
                                      'url'     => array(
                                          '/p3pages/p3PageTranslation/update',
-                                         'returnUrl' => $_SERVER['REQUEST_URI'],
+                                         'returnUrl' => getenv('REQUEST_URI'),
                                          'id'        => ($translation) ? $translation->id : null
                                      ),
 
@@ -83,13 +83,13 @@ $this->widget(
                                      'url'     => array(
                                          '/p3pages/p3Page/update',
                                          'id'        => ($page) ? $page->id : null,
-                                         'returnUrl' => $_SERVER['REQUEST_URI']),
+                                         'returnUrl' => getenv('REQUEST_URI')),
                                      'visible' => Yii::app()->user->checkAccess('P3pages.P3PageTranslation.*') && $page),
                                array('label'   => 'Append Child Page',
                                      'icon'    => 'plus',
                                      'url'     => array(
                                          '/p3pages/p3Page/createChild',
-                                         'returnUrl'  => $_SERVER['REQUEST_URI'],
+                                         'returnUrl'  => getenv('REQUEST_URI'),
                                          'P3PageMeta' => array(
                                              'treeParent_id' => ($page) ? $page->id : null,
                                          )
@@ -99,7 +99,7 @@ $this->widget(
                                      'icon'    => 'plus-sign',
                                      'url'     => array(
                                          '/p3pages/p3Page/createChild',
-                                         'returnUrl'  => $_SERVER['REQUEST_URI'],
+                                         'returnUrl'  => getenv('REQUEST_URI'),
                                          'P3PageMeta' => array(
                                              'treeParent_id' => ($page && $page->getParent()) ? $page->getParent()->id :
                                                  null
