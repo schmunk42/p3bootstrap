@@ -1,9 +1,5 @@
 <?php
-$title = $this->pageTitle;
-$this->pageTitle = Yii::app()->name . ' - ' . $this->pageTitle;
-$this->breadcrumbs = array(
-	$title,
-);
+$this->breadcrumbs = (P3Page::getActivePage())?P3Page::getActivePage()->getBreadcrumbs():$this->pageTitle;
 ?>
 
 <?php $this->widget("TbBreadcrumbs", array("links"=>$this->breadcrumbs)) ?>

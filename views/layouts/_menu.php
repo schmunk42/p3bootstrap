@@ -1,7 +1,7 @@
 <?php
 Yii::import('p3pages.modules.*');
 
-$rootNode = P3Page::model()->findByAttributes(array('layout' => '_TbNavbar'));
+$rootNode = P3Page::model()->findByAttributes(array('nameId' => 'Navbar'));
 $page     = P3Page::getActivePage();
 if ($page !== null) {
     $translation = $page->getTranslationModel();
