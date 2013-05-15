@@ -1,7 +1,7 @@
 <?php
 Yii::import('p3pages.modules.*');
 
-$rootNode = P3Page::model()->findByAttributes(array('layout' => '_TbNavbar'));
+$rootNode = P3Page::model()->findByAttributes(array('nameId' => 'Navbar'));
 $page     = P3Page::getActivePage();
 if ($page !== null) {
     $translation = $page->getTranslationModel();
@@ -30,7 +30,7 @@ $this->widget(
                          'icon'  => 'globe white',
                          'url'   => '#',
                          'items' => array(
-                             array('label' => 'Choose Language'),
+                             array('label' => Yii::t('app', 'Choose Language')),
                              array('label' => 'English',
                                    'url'   => array_merge(array(''), $_GET, array('lang' => 'en'))),
                              array('label' => 'Deutsch',
@@ -47,18 +47,18 @@ $this->widget(
                            'visible' => Yii::app()->user->checkAccess('Editor'),
                            'icon'    => 'pencil white',
                            'items'   => array(
-                               array('label' => 'Media'),
-                               array('label'   => 'Upload',
+                               array('label' => Yii::t('app', 'Media')),
+                               array('label'   => Yii::t('app', 'Upload'),
                                      'icon'    => 'circle-arrow-up',
                                      'url'     => array('/p3media/import/upload'),
                                      'visible' => Yii::app()->user->checkAccess('P3media.Import.*')),
-                               array('label'   => 'Browse',
+                               array('label'   => Yii::t('app', 'Browse'),
                                      'icon'    => 'th',
                                      'url'     => array('/p3media'),
                                      'visible' => Yii::app()->user->checkAccess('P3media.Default.*')),
                                '---',
-                               array('label' => 'Pages'),
-                               array('label'   => 'Translation',
+                               array('label' => Yii::t('app', 'Pages')),
+                               array('label'   => Yii::t('app', 'Translation'),
                                      'icon'    => 'pencil',
                                      'url'     => array(
                                          '/p3pages/p3PageTranslation/create',
@@ -69,7 +69,7 @@ $this->widget(
                                          )
                                      ),
                                      'visible' => Yii::app()->user->checkAccess('P3pages.P3PageTranslation.*') && $page && !$translation),
-                               array('label'   => 'Translation',
+                               array('label'   => Yii::t('app', 'Translation'),
                                      'icon'    => 'pencil',
                                      'url'     => array(
                                          '/p3pages/p3PageTranslation/update',
@@ -78,14 +78,14 @@ $this->widget(
                                      ),
 
                                      'visible' => Yii::app()->user->checkAccess('P3pages.P3PageTranslation.*') && $page && $translation),
-                               array('label'   => 'Template',
+                               array('label'   => Yii::t('app', 'Template'),
                                      'icon'    => 'wrench',
                                      'url'     => array(
                                          '/p3pages/p3Page/update',
                                          'id'        => ($page) ? $page->id : null,
                                          'returnUrl' => getenv('REQUEST_URI')),
                                      'visible' => Yii::app()->user->checkAccess('P3pages.P3PageTranslation.*') && $page),
-                               array('label'   => 'Append Child Page',
+                               array('label'   => Yii::t('app', 'Append Child Page'),
                                      'icon'    => 'plus',
                                      'url'     => array(
                                          '/p3pages/p3Page/createChild',
@@ -95,7 +95,7 @@ $this->widget(
                                          )
                                      ),
                                      'visible' => Yii::app()->user->checkAccess('P3pages.P3Page.*') && $page),
-                               array('label'   => 'Append Sibling Page',
+                               array('label'   => Yii::t('app', 'Append Sibling Page'),
                                      'icon'    => 'plus-sign',
                                      'url'     => array(
                                          '/p3pages/p3Page/createChild',
@@ -106,19 +106,19 @@ $this->widget(
                                          )
                                      ),
                                      'visible' => Yii::app()->user->checkAccess('P3pages.P3Page.*') && $page),
-                               array('label'   => 'Sitemap',
+                               array('label'   => Yii::t('app', 'Sitemap'),
                                      'icon'    => 'list',
                                      'url'     => array('/p3pages'),
                                      'visible' => Yii::app()->user->checkAccess('P3pages.Default.*')),
                                '---',
-                               array('label' => 'Widgets'),
-                               array('label'   => 'Manage',
+                               array('label' => Yii::t('app', 'Widgets')),
+                               array('label'   => Yii::t('app', 'Manage'),
                                      'icon'    => 'list-alt',
                                      'url'     => array('/p3widgets'),
                                      'visible' => Yii::app()->user->checkAccess('P3widgets.Default.*')),
                                '---',
-                               array('label' => 'Application'),
-                               array('label'   => 'Overview',
+                               array('label' => Yii::t('app', 'Application')),
+                               array('label'   => Yii::t('app', 'Overview'),
                                      'icon'    => 'list-alt',
                                      'url'     => array('/p3admin'),
                                      'visible' => Yii::app()->user->checkAccess('Editor')),
@@ -128,17 +128,17 @@ $this->widget(
                            'visible' => Yii::app()->user->checkAccess('Admin'),
                            'icon'    => 'cog white',
                            'items'   => array(
-                               array('label' => 'Application'),
-                               array('label'   => 'Users',
+                               array('label' => Yii::t('app', 'Application')),
+                               array('label'   => Yii::t('app', 'Users'),
                                      'icon'    => 'user',
                                      'url'     => array('/user/admin/admin'),
                                      'visible' => Yii::app()->user->checkAccess('Admin')),
-                               array('label'   => 'Rights',
+                               array('label'   => Yii::t('app', 'Rights'),
                                      'icon'    => 'briefcase',
                                      'url'     => array('/rights'),
                                      'visible' => Yii::app()->user->checkAccess('Admin')),
                                '---',
-                               array('label'   => 'Settings',
+                               array('label'   => Yii::t('app', 'Settings'),
                                      'icon'    => 'certificate',
                                      'url'     => array('/p3admin/default/settings'),
                                      'visible' => Yii::app()->user->checkAccess('Admin')),
@@ -150,22 +150,22 @@ $this->widget(
                                'warning-sign white' :
                                'user white',
                            'items'   => array(
-                               array('label' => 'User'),
-                               array('label'   => 'Profile',
+                               array('label' => Yii::t('app', 'User')),
+                               array('label'   => Yii::t('app', 'Profile'),
                                      'icon'    => 'tasks',
                                      'url'     => array('/user/profile'),
                                      'visible' => !Yii::app()->user->isGuest),
-                               array('label'   => 'List',
+                               array('label'   => Yii::t('app', 'List'),
                                      'icon'    => 'list',
                                      'url'     => array('/user'),
                                      'visible' => !Yii::app()->user->isGuest),
                                '---',
-                               array('label'   => 'Logout',
+                               array('label'   => Yii::t('app', 'Logout'),
                                      'icon'    => 'lock',
                                      'url'     => array('/site/logout'),
                                      'visible' => !Yii::app()->user->isGuest),
                            )),
-                     array('label'   => 'Login',
+                     array('label'   => Yii::t('app', 'Login'),
                            'url'     => Yii::app()->user->loginUrl,
                            'visible' => Yii::app()->user->isGuest,
                            'icon'    => 'lock white'),
