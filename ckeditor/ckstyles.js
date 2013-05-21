@@ -125,17 +125,17 @@ CKEDITOR.addStylesSet( 'my_styles',
         }
     },
     {
-        name : '3/4 width, container span10',
-        element : 'div',
-        attributes : {
-            'class' : 'span10'
-        }
-    },
-    {
-        name : '2/3 width, container span9',
+        name : '3/4 width, container span9',
         element : 'div',
         attributes : {
             'class' : 'span9'
+        }
+    },
+    {
+        name : '2/3 width, container span8',
+        element : 'div',
+        attributes : {
+            'class' : 'span8'
         }
     },
     {
