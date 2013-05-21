@@ -3,13 +3,13 @@
  *
  * This file is copied from p3bootstrap. You have to run
  * php composer.phar install --dev
- * in order to get the imported files.
+ * in order to get the files defined in the @import(s) below
  *
  * paths are adjustes to work from ./www/themes/THEMENAME
  */
 /* import bootrap */
 /*!
- * Bootstrap v2.3.0
+ * Bootstrap v2.3.2
  *
  * Copyright 2012 Twitter, Inc
  * Licensed under the Apache License v2.0
@@ -3124,6 +3124,14 @@ table th[class*="span"],
 .open > .dropdown-menu {
   display: block;
 }
+.dropdown-backdrop {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 990;
+}
 .pull-right > .dropdown-menu {
   right: 0;
   left: auto;
@@ -6065,7 +6073,7 @@ a.badge:focus {
   position: fixed;
 }
 /*!
- * Bootstrap Responsive v2.3.0
+ * Bootstrap Responsive v2.3.2
  *
  * Copyright 2012 Twitter, Inc
  * Licensed under the Apache License v2.0
@@ -8231,11 +8239,6 @@ div.form INPUT[type="submit"] .caret {
   border-bottom-color: #ffffff;
 }
 /* override variables with local values */
-/* use composer.phar require thomaspark/bootswatch */
-/* fix responsive images */
-img {
-  height: auto !important;
-}
 /* adjust content with fixed navbar */
 @media (min-width: 989px) {
   body {
@@ -8266,12 +8269,27 @@ img {
     margin-left: 0px;
   }
 }
-.ckeditor LI {
-  height: 180px;
-}
 #p3-media-grid IMG.ckeditor {
   height: auto;
   width: 150px;
   max-width: 150px;
   max-height: 120px;
+}
+/* use composer.phar require thomaspark/bootswatch */
+/* force scrollbars */
+html {
+  overflow-y: scroll;
+}
+/* fix responsive images */
+img {
+  height: auto !important;
+}
+.hint {
+  color: #999999;
+  font-style: italic;
+}
+@media (max-width: 767px) {
+  .hint {
+    margin-bottom: 0.5em;
+  }
 }
