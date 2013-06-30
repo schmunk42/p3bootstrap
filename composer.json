@@ -20,6 +20,7 @@
         "clevertech/yiibooster": "1.*"
     },
     "suggest": {
+        "crisu83/yii-less:>=2.0": "LESS compiler",
         "twitter/bootstrap": "Source files for LESS customization",
         "phundament/lessii": "Blueprint to Bootstrap LESS translation library, helpful for older Yii modules"
     }

@@ -11,19 +11,14 @@
     <!--[if lt IE 9]>
     <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
     <?php
     $cs = Yii::app()->getClientScript();
     $cs->registerMetaTag('width=device-width, initial-scale=1.0', 'viewport');
-    $cs->registerLinkTag('shortcut icon', NULL, Yii::app()->theme->baseUrl . '/img/favicon.ico', NULL, NULL);
+    $cs->registerLinkTag('shortcut icon', NULL, '/favicon.ico', NULL, NULL);
 
     // CSS files
-    if (Yii::app()->hasComponent('less')) {
-        Yii::app()->less->files = array('themes/'.Yii::app()->theme->name.'/less/p3.less' => 'themes/'.Yii::app()->theme->name.'/css/p3.css');
-        Yii::app()->less->register();
-    }
-    else {
-        $cs->registerCssFile(Yii::app()->theme->baseUrl . '/css/p3.css');
-    }
+    $cs->registerCssFile(Yii::app()->theme->baseUrl . '/css/p3.css');
     ?>
 </head>
 
