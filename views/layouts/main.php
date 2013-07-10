@@ -3,8 +3,10 @@
 <head>
     <meta charset="utf-8">
     <title><?php echo CHtml::encode($this->pageTitle); ?></title>
-    <meta name="description" content="<?php echo (P3Page::getActivePage())?P3Page::getActivePage()->t('description'):'' ?>">
-    <meta name="keywords" content="<?php echo (P3Page::getActivePage())?P3Page::getActivePage()->t('keywords'):'' ?>">
+    <meta name="description"
+          content="<?php echo (P3Page::getActivePage()) ? P3Page::getActivePage()->t('description') : '' ?>">
+    <meta name="keywords"
+          content="<?php echo (P3Page::getActivePage()) ? P3Page::getActivePage()->t('keywords') : '' ?>">
     <meta name="author" content="">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -24,9 +26,19 @@
 
 <body>
 
-<?php $this->renderFile(Yii::getPathOfAlias('application.themes.frontend.views.layouts') . DIRECTORY_SEPARATOR . '_menu.php') ?>
+<?php
+
+if (!Yii::app()->user->isGuest) {
+    $this->renderFile(
+        Yii::getPathOfAlias('application.themes.backend2.views.layouts') . DIRECTORY_SEPARATOR . '_navbar.php'
+    );
+}
+?>
 
 <div class="container">
+    <?php $this->renderFile(
+        Yii::getPathOfAlias('application.themes.frontend.views.layouts') . DIRECTORY_SEPARATOR . '_menu.php'
+    ) ?>
     <div class="subwrapper">
         <?php echo $content; ?>
     </div>
@@ -36,5 +48,6 @@
     </footer>
 </div>
 <!-- /container -->
+
 </body>
 </html>
