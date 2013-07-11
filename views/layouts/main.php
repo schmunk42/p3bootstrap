@@ -26,15 +26,6 @@
 
 <body>
 
-<?php
-
-if (!Yii::app()->user->isGuest) {
-    $this->renderFile(
-        Yii::getPathOfAlias('application.themes.backend2.views.layouts') . DIRECTORY_SEPARATOR . '_navbar.php'
-    );
-}
-?>
-
 <div class="container">
     <?php $this->renderFile(
         Yii::getPathOfAlias('application.themes.frontend.views.layouts') . DIRECTORY_SEPARATOR . '_menu.php'
@@ -48,6 +39,16 @@ if (!Yii::app()->user->isGuest) {
     </footer>
 </div>
 <!-- /container -->
+
+<?php
+
+if (!Yii::app()->user->isGuest) {
+    $this->renderFile(
+        Yii::getPathOfAlias('application.themes.backend2.views.layouts') . DIRECTORY_SEPARATOR . '_navbar.php'
+    );
+}
+
+?>
 
 </body>
 </html>
