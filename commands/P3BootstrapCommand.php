@@ -51,34 +51,18 @@ EOS;
 
         echo "\nDeploying p3bootstrap package contents to theme folder as 'frontend' ...\n";
 
-        /*$backendViews = $this->buildFileList(
-            $srcPath . 'views/layouts', $themePath . DIRECTORY_SEPARATOR . 'backend/views/layouts');
-        $backendSkins = $this->buildFileList(
-            $srcPath . 'views/skins', $themePath . DIRECTORY_SEPARATOR . 'backend/views/skins');
-        unset($backendViews['_menu.php']);
-
-        $backendCss = $this->buildFileList(
-            $srcPath . 'css', $publicThemePath . DIRECTORY_SEPARATOR . 'backend/css');
-        $backendLess = $this->buildFileList(
-            $srcPath . 'less', $publicThemePath . DIRECTORY_SEPARATOR . 'backend/less');*/
-
         $frontendViews = $this->buildFileList(
             $srcPath . 'views',
             $themePath . DIRECTORY_SEPARATOR . 'frontend/views',
             '',
             array('skins'));
+        $frontendLess = $this->buildFileList(
+            $srcPath . 'less', $themePath . DIRECTORY_SEPARATOR . 'frontend/less');
+
         $frontendCss = $this->buildFileList(
             $srcPath . 'css', $publicThemePath . DIRECTORY_SEPARATOR . 'frontend/css');
-        $frontendLess = $this->buildFileList(
-            $srcPath . 'less', $publicThemePath . DIRECTORY_SEPARATOR . 'frontend/less');
         $frontendCkeditor = $this->buildFileList(
             $srcPath . 'ckeditor', $publicThemePath . DIRECTORY_SEPARATOR . 'frontend/ckeditor');
-
-        /*echo "\nCopying theme files for 'backend' theme...\n";
-        $this->copyFiles($backendViews);
-        $this->copyFiles($backendSkins);
-        $this->copyFiles($backendCss);
-        $this->copyFiles($backendLess);*/
 
         echo "\nCopying theme files for 'frontend' theme...\n";
         $this->copyFiles($frontendViews);
