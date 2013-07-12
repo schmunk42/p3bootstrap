@@ -40,6 +40,8 @@
 </div>
 <!-- /container -->
 
+
+<div id="backend">
 <?php
 
 if (!Yii::app()->user->isGuest) {
@@ -49,6 +51,7 @@ if (!Yii::app()->user->isGuest) {
 }
 
 ?>
+</div>
 
 </body>
 </html>

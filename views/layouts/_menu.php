@@ -13,7 +13,7 @@ $this->widget(
     'TbNavbar',
     array(
          //'fluid' => true,
-         'collapse' => false,
+         'collapse' => true,
          'fixed' => false,
          'items'    => array(
              array(
