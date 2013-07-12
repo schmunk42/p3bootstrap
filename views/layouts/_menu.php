@@ -30,7 +30,7 @@ $this->widget(
                          'icon'  => 'globe white',
                          'url'   => '#',
                          'items' => array(
-                             array('label' => Yii::t('app', 'Choose Language')),
+                             array('label' => Yii::t('app', 'Languages')),
                              array(
                                  'label' => 'English',
                                  'url'   => array_merge(array(''), $_GET, array('lang' => 'en'))
