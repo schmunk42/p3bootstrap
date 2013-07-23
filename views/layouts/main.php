@@ -49,7 +49,8 @@
 <div id="backend">
 <?php
 
-if (!Yii::app()->user->isGuest) {
+if (Yii::app()->user->checkAccess('Editor')) {
+    $cs->registerCssFile($css . '/backend.css');
     $this->renderFile(
         Yii::getPathOfAlias('application.themes.backend2.views.layouts') . DIRECTORY_SEPARATOR . '_navbar.php'
     );
