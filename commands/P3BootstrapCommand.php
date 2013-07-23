@@ -20,7 +20,8 @@
 class P3BootstrapCommand extends CConsoleCommand
 {
     public $themePath = 'application.themes'; // view files
-    public $publicThemePath = 'application.www.themes'; // css, js, ...
+
+    public $themeName = 'frontend';
 
     public function getHelp()
     {
@@ -38,14 +39,9 @@ EOS;
         $srcPath = dirname(__FILE__) . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR;
 
         $themePath = realpath(Yii::getPathOfAlias($this->themePath));
-        $publicThemePath = realpath(Yii::getPathOfAlias($this->publicThemePath));
 
         if (!is_dir($themePath)) {
             echo "\nInvalid 'themePath', aborting.";
-            return;
-        }
-        if (!is_dir($publicThemePath)) {
-            echo "\nInvalid 'publicThemePath', aborting.";
             return;
         }
 
@@ -53,22 +49,20 @@ EOS;
 
         $frontendViews = $this->buildFileList(
             $srcPath . 'views',
-            $themePath . DIRECTORY_SEPARATOR . 'frontend/views',
+            $themePath . DIRECTORY_SEPARATOR . $this->themeName . '/views',
             '',
             array('skins'));
         $frontendLess = $this->buildFileList(
-            $srcPath . 'less', $themePath . DIRECTORY_SEPARATOR . 'frontend/less');
+            $srcPath . 'less', $themePath . DIRECTORY_SEPARATOR . $this->themeName . '/less');
 
-        $frontendCss = $this->buildFileList(
-            $srcPath . 'css', $publicThemePath . DIRECTORY_SEPARATOR . 'frontend/css');
-        $frontendCkeditor = $this->buildFileList(
-            $srcPath . 'ckeditor', $publicThemePath . DIRECTORY_SEPARATOR . 'frontend/ckeditor');
+        $frontendAssets = $this->buildFileList(
+            $srcPath . 'assets', $themePath . DIRECTORY_SEPARATOR . $this->themeName . '/assets');
 
-        echo "\nCopying theme files for 'frontend' theme...\n";
+        echo "\nCopying theme files for '{$this->themeName}' theme...\n";
+
         $this->copyFiles($frontendViews);
-        $this->copyFiles($frontendCss);
+        $this->copyFiles($frontendAssets);
         $this->copyFiles($frontendLess);
-        $this->copyFiles($frontendCkeditor);
     }
 
 }

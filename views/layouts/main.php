@@ -20,7 +20,12 @@
     $cs->registerLinkTag('shortcut icon', NULL, '/favicon.ico', NULL, NULL);
 
     // CSS files
-    $cs->registerCssFile(Yii::app()->theme->baseUrl . '/css/p3.css');
+    $css = Yii::app()->assetManager->publish(
+        Yii::app()->theme->basePath . '/assets',
+        true,   // hash by name
+        -1,     // level
+        false); // forceCopy
+    $cs->registerCssFile($css . '/p3.css');
     ?>
 </head>
 
