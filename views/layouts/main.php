@@ -22,9 +22,10 @@
     // CSS files
     $css = Yii::app()->assetManager->publish(
         Yii::app()->theme->basePath . '/assets',
-        true,   // hash by name
-        -1,     // level
-        false); // forceCopy
+        true, // hash by name
+        -1, // level
+        false
+    ); // forceCopy
     $cs->registerCssFile($css . '/p3.css');
     ?>
 </head>
@@ -47,16 +48,16 @@
 
 
 <div id="backend">
-<?php
+    <?php
 
-if (Yii::app()->user->checkAccess('Editor')) {
-    $cs->registerCssFile($css . '/backend.css');
-    $this->renderFile(
-        Yii::getPathOfAlias('application.themes.backend2.views.layouts') . DIRECTORY_SEPARATOR . '_navbar.php'
-    );
-}
+    if (Yii::app()->user->checkAccess('Editor')) {
+        $cs->registerCssFile($css . '/backend.css');
+        $this->renderFile(
+            Yii::getPathOfAlias('application.themes.backend2.views.layouts') . DIRECTORY_SEPARATOR . '_navbar.php'
+        );
+    }
 
-?>
+    ?>
 </div>
 
 </body>
