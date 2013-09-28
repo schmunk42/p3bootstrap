@@ -29,17 +29,7 @@ $this->widget(
                          'label' => Yii::app()->language,
                          'icon'  => 'globe white',
                          'url'   => '#',
-                         'items' => array(
-                             array('label' => Yii::t('app', 'Languages')),
-                             array(
-                                 'label' => 'English',
-                                 'url'   => array_merge(array(''), $_GET, array('lang' => 'en'))
-                             ),
-                             array(
-                                 'label' => 'Deutsch',
-                                 'url'   => array_merge(array(''), $_GET, array('lang' => 'de'))
-                             ),
-                         ),
+                         'items' => $this->getLanguageMenuItems()
                      )
                  )
              ),
