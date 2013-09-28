@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <title><?php echo CHtml::encode($this->pageTitle); ?></title>
     <meta name="description"
-          content="<?php echo (P3Page::getActivePage()) ? P3Page::getActivePage()->t('description') : '' ?>">
+          content="<?php echo (P3Page::getActivePage()) ? P3Page::getActivePage()->description : '' ?>">
     <meta name="keywords"
-          content="<?php echo (P3Page::getActivePage()) ? P3Page::getActivePage()->t('keywords') : '' ?>">
+          content="<?php echo (P3Page::getActivePage()) ? P3Page::getActivePage()->keywords : '' ?>">
     <meta name="author" content="">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
