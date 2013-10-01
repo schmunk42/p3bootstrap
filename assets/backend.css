@@ -14,11 +14,11 @@
   /*!
  * Bootstrap v2.3.2
  *
- * Copyright 2012 Twitter, Inc
+ * Copyright 2013 Twitter, Inc
  * Licensed under the Apache License v2.0
  * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Designed and built with all the love in the world @twitter by @mdo and @fat.
+ * Designed and built with all the love in the world by @mdo and @fat.
  */
 
   /* Allow for input prepend/append in search forms */
@@ -30,11 +30,11 @@
   /*!
  * Bootstrap Responsive v2.3.2
  *
- * Copyright 2012 Twitter, Inc
+ * Copyright 2013 Twitter, Inc
  * Licensed under the Apache License v2.0
  * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Designed and built with all the love in the world @twitter by @mdo and @fat.
+ * Designed and built with all the love in the world by @mdo and @fat.
  */
 
   /* use bootstrap with blueprint translation (for old extensions) */
@@ -8278,6 +8278,13 @@
 #backend #backend-navbar .navbar-inner {
   padding-bottom: 20px;
 }
+#backend .btn [class^="icon-"],
+#backend .nav [class^="icon-"],
+#backend .btn [class*=" icon-"],
+#backend .nav [class*=" icon-"] {
+  display: inline-block;
+  line-height: 1em;
+}
 #backend .row-fluid .row {
   margin-left: 0;
 }
@@ -8335,23 +8342,25 @@
   max-width: 90%;
   margin-bottom: 9px;
 }
+#backend .grid-view table select,
 #backend .grid-view table input,
 #backend .grid-view table textarea,
 #backend .grid-view table .uneditable-input {
-  width: auto;
-  max-width: 60px;
-  /* TODO */
-
+  width: 100%;
+  max-width: 90%;
+}
+#backend .grid-view table td:first-child {
+  min-width: 200px;
 }
 #backend .grid-view table td.button-column {
   white-space: nowrap;
 }
 #backend input.je-key-input {
-  width: 20%;
+  width: 15%;
   text-align: left;
 }
 #backend input.je-val-input {
-  width: 50%;
+  width: 30%;
   text-align: left;
 }
 #backend .hint {
@@ -8511,6 +8520,58 @@
 #backend #rights.container #menu UL.actions LI A .badge {
   position: relative;
   top: -1px;
+}
+#backend #rights.container A.revoke-link {
+  display: inline-block;
+  padding: 2px 4px;
+  font-size: 10.998px;
+  font-weight: bold;
+  line-height: 14px;
+  color: #ffffff;
+  vertical-align: baseline;
+  white-space: nowrap;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #999999;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #468847;
+}
+#backend #rights.container A.revoke-link:empty {
+  display: none;
+}
+#backend #rights.container A.revoke-link-important {
+  background-color: #b94a48;
+}
+#backend #rights.container A.revoke-link-important[href] {
+  background-color: #953b39;
+}
+#backend #rights.container A.revoke-link-warning {
+  background-color: #f89406;
+}
+#backend #rights.container A.revoke-link-warning[href] {
+  background-color: #c67605;
+}
+#backend #rights.container A.revoke-link-success {
+  background-color: #468847;
+}
+#backend #rights.container A.revoke-link-success[href] {
+  background-color: #356635;
+}
+#backend #rights.container A.revoke-link-info {
+  background-color: #3a87ad;
+}
+#backend #rights.container A.revoke-link-info[href] {
+  background-color: #2d6987;
+}
+#backend #rights.container A.revoke-link-inverse {
+  background-color: #333333;
+}
+#backend #rights.container A.revoke-link-inverse[href] {
+  background-color: #1a1a1a;
+}
+#backend #rights.container A.revoke-link[href] {
+  background-color: #356635;
 }
 @media (min-width: 768px) {
   #backend #backend .navbar-fixed-bottom {
