@@ -17,7 +17,7 @@
         "yiisoft/yii" : "1.1.*",
         "phundament/p3pages": ">=0.17",
         "phundament/p3widgets": ">=0.11",
-        "clevertech/yiibooster": "1.*,2.*"
+        "clevertech/yiibooster": ">=1.0,<3.0"
     },
     "suggest": {
         "crisu83/yii-less:>=2.0": "LESS compiler",
