@@ -58,11 +58,15 @@ EOS;
         $frontendAssets = $this->buildFileList(
             $srcPath . 'assets', $themePath . DIRECTORY_SEPARATOR . $this->themeName . '/assets');
 
+        $frontendJs = $this->buildFileList(
+            $srcPath . 'js', $themePath . DIRECTORY_SEPARATOR . $this->themeName . '/js');
+
         echo "\nCopying theme files for '{$this->themeName}' theme...\n";
 
         $this->copyFiles($frontendViews);
         $this->copyFiles($frontendAssets);
         $this->copyFiles($frontendLess);
+        $this->copyFiles($frontendJs);
     }
 
 }

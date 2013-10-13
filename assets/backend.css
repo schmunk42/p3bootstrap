@@ -8278,12 +8278,9 @@
 #backend #backend-navbar .navbar-inner {
   padding-bottom: 20px;
 }
-#backend .btn [class^="icon-"],
-#backend .nav [class^="icon-"],
-#backend .btn [class*=" icon-"],
-#backend .nav [class*=" icon-"] {
-  display: inline-block;
-  line-height: 1em;
+#backend [class^="icon-"],
+#backend [class*=" icon-"] {
+  background-image: none;
 }
 #backend .row-fluid .row {
   margin-left: 0;
