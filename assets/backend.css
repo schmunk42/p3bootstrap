@@ -11,19 +11,7 @@
 
   /* import bootrap */
 
-  /*!
- * Bootstrap v2.3.2
- *
- * Copyright 2013 Twitter, Inc
- * Licensed under the Apache License v2.0
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Designed and built with all the love in the world by @mdo and @fat.
- */
-
   /* Allow for input prepend/append in search forms */
-
-  /* White icons with optional class, or on hover/focus/active states of certain elements */
 
   /* move down carets for tabs */
 
@@ -49,6 +37,8 @@
   /* hotfix */
 
   /* override variables with local values */
+
+  /* workaround for 'status-bar' on chrome and firefox */
 
   /*margin: 0;
   font-family: @baseFontFamily;
@@ -2585,461 +2575,6 @@
 }
 #backend .table-hover tbody tr.info:hover > td {
   background-color: #c4e3f3;
-}
-#backend [class^="icon-"],
-#backend [class*=" icon-"] {
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  *margin-right: .3em;
-  line-height: 14px;
-  vertical-align: text-top;
-  background-image: url("img/glyphicons-halflings.png");
-  background-position: 14px 14px;
-  background-repeat: no-repeat;
-  margin-top: 1px;
-}
-#backend .icon-white,
-#backend .nav-pills > .active > a > [class^="icon-"],
-#backend .nav-pills > .active > a > [class*=" icon-"],
-#backend .nav-list > .active > a > [class^="icon-"],
-#backend .nav-list > .active > a > [class*=" icon-"],
-#backend .navbar-inverse .nav > .active > a > [class^="icon-"],
-#backend .navbar-inverse .nav > .active > a > [class*=" icon-"],
-#backend .dropdown-menu > li > a:hover > [class^="icon-"],
-#backend .dropdown-menu > li > a:focus > [class^="icon-"],
-#backend .dropdown-menu > li > a:hover > [class*=" icon-"],
-#backend .dropdown-menu > li > a:focus > [class*=" icon-"],
-#backend .dropdown-menu > .active > a > [class^="icon-"],
-#backend .dropdown-menu > .active > a > [class*=" icon-"],
-#backend .dropdown-submenu:hover > a > [class^="icon-"],
-#backend .dropdown-submenu:focus > a > [class^="icon-"],
-#backend .dropdown-submenu:hover > a > [class*=" icon-"],
-#backend .dropdown-submenu:focus > a > [class*=" icon-"] {
-  background-image: url("img/glyphicons-halflings-white.png");
-}
-#backend .icon-glass {
-  background-position: 0      0;
-}
-#backend .icon-music {
-  background-position: -24px 0;
-}
-#backend .icon-search {
-  background-position: -48px 0;
-}
-#backend .icon-envelope {
-  background-position: -72px 0;
-}
-#backend .icon-heart {
-  background-position: -96px 0;
-}
-#backend .icon-star {
-  background-position: -120px 0;
-}
-#backend .icon-star-empty {
-  background-position: -144px 0;
-}
-#backend .icon-user {
-  background-position: -168px 0;
-}
-#backend .icon-film {
-  background-position: -192px 0;
-}
-#backend .icon-th-large {
-  background-position: -216px 0;
-}
-#backend .icon-th {
-  background-position: -240px 0;
-}
-#backend .icon-th-list {
-  background-position: -264px 0;
-}
-#backend .icon-ok {
-  background-position: -288px 0;
-}
-#backend .icon-remove {
-  background-position: -312px 0;
-}
-#backend .icon-zoom-in {
-  background-position: -336px 0;
-}
-#backend .icon-zoom-out {
-  background-position: -360px 0;
-}
-#backend .icon-off {
-  background-position: -384px 0;
-}
-#backend .icon-signal {
-  background-position: -408px 0;
-}
-#backend .icon-cog {
-  background-position: -432px 0;
-}
-#backend .icon-trash {
-  background-position: -456px 0;
-}
-#backend .icon-home {
-  background-position: 0 -24px;
-}
-#backend .icon-file {
-  background-position: -24px -24px;
-}
-#backend .icon-time {
-  background-position: -48px -24px;
-}
-#backend .icon-road {
-  background-position: -72px -24px;
-}
-#backend .icon-download-alt {
-  background-position: -96px -24px;
-}
-#backend .icon-download {
-  background-position: -120px -24px;
-}
-#backend .icon-upload {
-  background-position: -144px -24px;
-}
-#backend .icon-inbox {
-  background-position: -168px -24px;
-}
-#backend .icon-play-circle {
-  background-position: -192px -24px;
-}
-#backend .icon-repeat {
-  background-position: -216px -24px;
-}
-#backend .icon-refresh {
-  background-position: -240px -24px;
-}
-#backend .icon-list-alt {
-  background-position: -264px -24px;
-}
-#backend .icon-lock {
-  background-position: -287px -24px;
-}
-#backend .icon-flag {
-  background-position: -312px -24px;
-}
-#backend .icon-headphones {
-  background-position: -336px -24px;
-}
-#backend .icon-volume-off {
-  background-position: -360px -24px;
-}
-#backend .icon-volume-down {
-  background-position: -384px -24px;
-}
-#backend .icon-volume-up {
-  background-position: -408px -24px;
-}
-#backend .icon-qrcode {
-  background-position: -432px -24px;
-}
-#backend .icon-barcode {
-  background-position: -456px -24px;
-}
-#backend .icon-tag {
-  background-position: 0 -48px;
-}
-#backend .icon-tags {
-  background-position: -25px -48px;
-}
-#backend .icon-book {
-  background-position: -48px -48px;
-}
-#backend .icon-bookmark {
-  background-position: -72px -48px;
-}
-#backend .icon-print {
-  background-position: -96px -48px;
-}
-#backend .icon-camera {
-  background-position: -120px -48px;
-}
-#backend .icon-font {
-  background-position: -144px -48px;
-}
-#backend .icon-bold {
-  background-position: -167px -48px;
-}
-#backend .icon-italic {
-  background-position: -192px -48px;
-}
-#backend .icon-text-height {
-  background-position: -216px -48px;
-}
-#backend .icon-text-width {
-  background-position: -240px -48px;
-}
-#backend .icon-align-left {
-  background-position: -264px -48px;
-}
-#backend .icon-align-center {
-  background-position: -288px -48px;
-}
-#backend .icon-align-right {
-  background-position: -312px -48px;
-}
-#backend .icon-align-justify {
-  background-position: -336px -48px;
-}
-#backend .icon-list {
-  background-position: -360px -48px;
-}
-#backend .icon-indent-left {
-  background-position: -384px -48px;
-}
-#backend .icon-indent-right {
-  background-position: -408px -48px;
-}
-#backend .icon-facetime-video {
-  background-position: -432px -48px;
-}
-#backend .icon-picture {
-  background-position: -456px -48px;
-}
-#backend .icon-pencil {
-  background-position: 0 -72px;
-}
-#backend .icon-map-marker {
-  background-position: -24px -72px;
-}
-#backend .icon-adjust {
-  background-position: -48px -72px;
-}
-#backend .icon-tint {
-  background-position: -72px -72px;
-}
-#backend .icon-edit {
-  background-position: -96px -72px;
-}
-#backend .icon-share {
-  background-position: -120px -72px;
-}
-#backend .icon-check {
-  background-position: -144px -72px;
-}
-#backend .icon-move {
-  background-position: -168px -72px;
-}
-#backend .icon-step-backward {
-  background-position: -192px -72px;
-}
-#backend .icon-fast-backward {
-  background-position: -216px -72px;
-}
-#backend .icon-backward {
-  background-position: -240px -72px;
-}
-#backend .icon-play {
-  background-position: -264px -72px;
-}
-#backend .icon-pause {
-  background-position: -288px -72px;
-}
-#backend .icon-stop {
-  background-position: -312px -72px;
-}
-#backend .icon-forward {
-  background-position: -336px -72px;
-}
-#backend .icon-fast-forward {
-  background-position: -360px -72px;
-}
-#backend .icon-step-forward {
-  background-position: -384px -72px;
-}
-#backend .icon-eject {
-  background-position: -408px -72px;
-}
-#backend .icon-chevron-left {
-  background-position: -432px -72px;
-}
-#backend .icon-chevron-right {
-  background-position: -456px -72px;
-}
-#backend .icon-plus-sign {
-  background-position: 0 -96px;
-}
-#backend .icon-minus-sign {
-  background-position: -24px -96px;
-}
-#backend .icon-remove-sign {
-  background-position: -48px -96px;
-}
-#backend .icon-ok-sign {
-  background-position: -72px -96px;
-}
-#backend .icon-question-sign {
-  background-position: -96px -96px;
-}
-#backend .icon-info-sign {
-  background-position: -120px -96px;
-}
-#backend .icon-screenshot {
-  background-position: -144px -96px;
-}
-#backend .icon-remove-circle {
-  background-position: -168px -96px;
-}
-#backend .icon-ok-circle {
-  background-position: -192px -96px;
-}
-#backend .icon-ban-circle {
-  background-position: -216px -96px;
-}
-#backend .icon-arrow-left {
-  background-position: -240px -96px;
-}
-#backend .icon-arrow-right {
-  background-position: -264px -96px;
-}
-#backend .icon-arrow-up {
-  background-position: -289px -96px;
-}
-#backend .icon-arrow-down {
-  background-position: -312px -96px;
-}
-#backend .icon-share-alt {
-  background-position: -336px -96px;
-}
-#backend .icon-resize-full {
-  background-position: -360px -96px;
-}
-#backend .icon-resize-small {
-  background-position: -384px -96px;
-}
-#backend .icon-plus {
-  background-position: -408px -96px;
-}
-#backend .icon-minus {
-  background-position: -433px -96px;
-}
-#backend .icon-asterisk {
-  background-position: -456px -96px;
-}
-#backend .icon-exclamation-sign {
-  background-position: 0 -120px;
-}
-#backend .icon-gift {
-  background-position: -24px -120px;
-}
-#backend .icon-leaf {
-  background-position: -48px -120px;
-}
-#backend .icon-fire {
-  background-position: -72px -120px;
-}
-#backend .icon-eye-open {
-  background-position: -96px -120px;
-}
-#backend .icon-eye-close {
-  background-position: -120px -120px;
-}
-#backend .icon-warning-sign {
-  background-position: -144px -120px;
-}
-#backend .icon-plane {
-  background-position: -168px -120px;
-}
-#backend .icon-calendar {
-  background-position: -192px -120px;
-}
-#backend .icon-random {
-  background-position: -216px -120px;
-  width: 16px;
-}
-#backend .icon-comment {
-  background-position: -240px -120px;
-}
-#backend .icon-magnet {
-  background-position: -264px -120px;
-}
-#backend .icon-chevron-up {
-  background-position: -288px -120px;
-}
-#backend .icon-chevron-down {
-  background-position: -313px -119px;
-}
-#backend .icon-retweet {
-  background-position: -336px -120px;
-}
-#backend .icon-shopping-cart {
-  background-position: -360px -120px;
-}
-#backend .icon-folder-close {
-  background-position: -384px -120px;
-  width: 16px;
-}
-#backend .icon-folder-open {
-  background-position: -408px -120px;
-  width: 16px;
-}
-#backend .icon-resize-vertical {
-  background-position: -432px -119px;
-}
-#backend .icon-resize-horizontal {
-  background-position: -456px -118px;
-}
-#backend .icon-hdd {
-  background-position: 0 -144px;
-}
-#backend .icon-bullhorn {
-  background-position: -24px -144px;
-}
-#backend .icon-bell {
-  background-position: -48px -144px;
-}
-#backend .icon-certificate {
-  background-position: -72px -144px;
-}
-#backend .icon-thumbs-up {
-  background-position: -96px -144px;
-}
-#backend .icon-thumbs-down {
-  background-position: -120px -144px;
-}
-#backend .icon-hand-right {
-  background-position: -144px -144px;
-}
-#backend .icon-hand-left {
-  background-position: -168px -144px;
-}
-#backend .icon-hand-up {
-  background-position: -192px -144px;
-}
-#backend .icon-hand-down {
-  background-position: -216px -144px;
-}
-#backend .icon-circle-arrow-right {
-  background-position: -240px -144px;
-}
-#backend .icon-circle-arrow-left {
-  background-position: -264px -144px;
-}
-#backend .icon-circle-arrow-up {
-  background-position: -288px -144px;
-}
-#backend .icon-circle-arrow-down {
-  background-position: -312px -144px;
-}
-#backend .icon-globe {
-  background-position: -336px -144px;
-}
-#backend .icon-wrench {
-  background-position: -360px -144px;
-}
-#backend .icon-tasks {
-  background-position: -384px -144px;
-}
-#backend .icon-filter {
-  background-position: -408px -144px;
-}
-#backend .icon-briefcase {
-  background-position: -432px -144px;
-}
-#backend .icon-fullscreen {
-  background-position: -456px -144px;
 }
 #backend .dropup,
 #backend .dropdown {
@@ -8259,6 +7794,98 @@
 #backend div.form INPUT[type="submit"] .caret {
   border-top-color: #ffffff;
   border-bottom-color: #ffffff;
+}
+#backend #backend-navbar {
+  opacity: 0.85;
+}
+#backend #backend-navbar .navbar-fixed-bottom {
+  z-index: 1150;
+}
+#backend #backend-navbar .navbar-inner {
+  padding-bottom: 20px;
+}
+#backend #rights.container {
+  width: auto;
+}
+#backend #rights.container .flashes {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+}
+#backend #p3admin-settings-view ul.thumbnails li {
+  height: 100px;
+}
+#backend .row-fluid .row {
+  margin-left: 0;
+}
+#backend .row-fluid ul.thumbnails li.span12 + li {
+  margin-left: 0px;
+}
+#backend .row-fluid ul.thumbnails li.span6:nth-child(2n + 3) {
+  margin-left: 0px;
+}
+#backend .row-fluid ul.thumbnails li.span4:nth-child(3n + 4) {
+  margin-left: 0px;
+}
+#backend .row-fluid ul.thumbnails li.span3:nth-child(4n + 5) {
+  margin-left: 0px;
+}
+#backend .row-fluid ul.thumbnails li.span2:nth-child(6n + 7) {
+  margin-left: 0px;
+}
+#backend .row-fluid ul.thumbnails li.span1:nth-child(12n + 13) {
+  margin-left: 0px;
+}
+#backend input.je-key-input,
+#backend input.je-val-input {
+  text-align: left;
+}
+#backend input,
+#backend textarea,
+#backend .uneditable-input {
+  width: auto;
+}
+#backend .grid-view table input,
+#backend .grid-view table textarea,
+#backend .grid-view table .uneditable-input {
+  width: auto;
+  max-width: 60px;
+  /* TODO */
+
+}
+#backend td.button-column {
+  white-space: nowrap;
+}
+#backend .hint {
+  color: #999999;
+  font-style: italic;
+}
+@media (max-width: 767px) {
+  #backend .hint {
+    margin-bottom: 0.5em;
+  }
+}
+@media (min-width: 768px) {
+  #backend #backend .navbar-fixed-bottom {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    margin-bottom: 0;
+  }
+  #backend #backend DIV.sidebar-container {
+    float: left;
+    margin-left: 0%;
+    width: 200px;
+    position: absolute;
+  }
+  #backend #backend DIV.content-container {
+    float: right;
+    margin-left: 220px;
+  }
+  #backend #backend .sidebar-wrapper UL.nav {
+    position: fixed;
+  }
 }
 #backend .subwrapper {
   margin-top: 20px;

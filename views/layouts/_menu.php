@@ -13,9 +13,9 @@
     $this->widget(
         'TbNavbar',
         array(
-             //'fluid' => true,
-             'collapse' => true,
-             'fixed'    => false,
+             //'fluid'    => true,
+             //'collapse' => true,
+             'fixed'    => true,
              'items'    => array(
                  array(
                      'class' => 'TbMenu',

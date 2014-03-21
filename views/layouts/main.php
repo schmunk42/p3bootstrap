@@ -18,14 +18,7 @@
     $cs = Yii::app()->getClientScript();
     $cs->registerMetaTag('width=device-width, initial-scale=1.0', 'viewport');
     $cs->registerLinkTag('shortcut icon', NULL, '/favicon.ico', NULL, NULL);
-
-    // CSS files
-    $css = Yii::app()->assetManager->publish(
-        Yii::app()->theme->basePath . '/assets',
-        true,   // hash by name
-        -1,     // level
-        false); // forceCopy
-    $cs->registerCssFile($css . '/p3.css');
+    $cs->registerPackage('frontend');
     ?>
 </head>
 
@@ -50,6 +43,13 @@
 <?php
 
 if (Yii::app()->user->checkAccess('Editor')) {
+    // CSS files
+    $css = Yii::app()->assetManager->publish(
+        Yii::app()->theme->basePath . '/assets',
+        false,   // hash by name
+        -1,     // level
+        false); // forceCopy
+    $cs->registerCssFile($css . '/p3.css');
     $cs->registerCssFile($css . '/backend.css');
     $this->renderFile(
         Yii::getPathOfAlias('application.themes.backend2.views.layouts') . DIRECTORY_SEPARATOR . '_navbar.php'

@@ -5,18 +5,3 @@
     padding-bottom: 40px;
   }
 }
-
-/* TODO: temp fix from https://github.com/twitter/bootstrap/issues/4550#issuecomment-10398831 */
-@media (max-width: 988px) {
-  .dropdown ul.dropdown-menu {
-    display: block;
-  }
-}
-
-// fix for fontawesome from yiibooster
-// we're removing the icon backgrounds, since we're using yiibooster.registerFontawesomeCss in main config
-.btn [class^="icon-"], .nav [class^="icon-"], .btn [class*=" icon-"], .nav [class*=" icon-"] {
-  background-image: none;
-  display: inline-block;
-  line-height: 1em;
-}
