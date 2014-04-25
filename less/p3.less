@@ -5,10 +5,11 @@
  * php composer.phar install --dev
  * in order to get the files defined in the @import(s) below
  *
- * paths are adjustes to work from ./www/themes/THEMENAME
+ * paths are adjusted to work from ./www/themes/THEMENAME
  */
 
-/* import bootrap */
+// BOOTSTRAP 2.3
+
 // Core variables and mixins
 @import "../../../../vendor/twitter/bootstrap/less/variables.less"; // Modify this for custom colors, font-sizes, etc
 @import "../../../../vendor/twitter/bootstrap/less/mixins.less";
@@ -64,16 +65,18 @@
 @import "../../../../vendor/twitter/bootstrap/less/utilities.less"; // Has to be last to override when necessary
 
 @import "../../../../vendor/twitter/bootstrap/less/responsive.less";
-/* use bootstrap with blueprint translation (for old extensions) */
+
+
+// use bootstrap with blueprint translation (for older extensions, eg. rights, user)
 @import "../../../../vendor/phundament/lessii/translations/blueprint-bootstrap.less";
 
-
-
+// custom application LESS variables
 @import "variables.less";
+
+// "hot-fixes"
 @import "hacks.less";
 
-
-/* use composer.phar require thomaspark/bootswatch */
+// use composer.phar require thomaspark/bootswatch for the following files
 //@import "../../../../vendor/thomaspark/bootswatch/journal/variables.less";
 //@import "../../../../vendor/thomaspark/bootswatch/journal/bootswatch.less";
 
